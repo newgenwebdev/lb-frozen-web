@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import ProtectedNavbar from "@/components/layout/ProtectedNavbar";
 import { Slider } from "@/components/ui/slider";
@@ -23,7 +23,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export default function SearchResultsPage() {
+function SearchResultsContent() {
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get("q") || "";
 
@@ -548,5 +548,20 @@ export default function SearchResultsPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SearchResultsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50">
+        <ProtectedNavbar />
+        <div className="container mx-auto px-6 py-8">
+          <p className="text-gray-600">Loading results...</p>
+        </div>
+      </div>
+    }>
+      <SearchResultsContent />
+    </Suspense>
   );
 }
