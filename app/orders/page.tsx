@@ -5,9 +5,9 @@ import ProfileSidebar from "@/components/layout/ProfileSidebar";
 
 export default function OrderDetailPage() {
   return (
-    <div className="mx-auto px-6 py-8">
+    <div className="mx-auto px-4 sm:px-6 py-4 sm:py-8">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 mb-4 sm:mb-8">
         <a href="/landing" className="hover:text-gray-900">
           Home
         </a>
@@ -16,17 +16,17 @@ export default function OrderDetailPage() {
       </div>
 
       {/* Main Layout */}
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
         {/* Left Sidebar */}
         <ProfileSidebar activeMenu="My orders" />
 
         {/* Main Content */}
         <div className="flex-1">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* Left Section - Order Details */}
             <div className="lg:col-span-2 space-y-0">
               {/* Order Status Stepper */}
-              <div className="bg-white rounded-t-lg border border-gray-200 p-6">
+              <div className="bg-white rounded-t-lg border border-gray-200 p-4 sm:p-6">
                 <div className="relative">
                   {/* Progress Bar */}
                   <div className="absolute top-4 left-0 right-0 h-0.5 bg-gray-200">
@@ -39,32 +39,32 @@ export default function OrderDetailPage() {
                   <div className="w-8 h-8 rounded-full bg-blue-600 border-4 border-white shadow-sm flex items-center justify-center mb-2">
                     <div className="w-3 h-3 rounded-full bg-white"></div>
                   </div>
-                  <span className="text-sm font-medium text-gray-900">
+                  <span className="text-xs sm:text-sm font-medium text-gray-900">
                     Waiting confirmation
                   </span>
                 </div>
 
                 <div className="flex flex-col items-center">
                   <div className="w-8 h-8 rounded-full bg-gray-200 border-4 border-white shadow-sm mb-2"></div>
-                  <span className="text-sm text-gray-500">Packing</span>
+                  <span className="text-xs sm:text-sm text-gray-500">Packing</span>
                 </div>
 
                 <div className="flex flex-col items-center">
                   <div className="w-8 h-8 rounded-full bg-gray-200 border-4 border-white shadow-sm mb-2"></div>
-                  <span className="text-sm text-gray-500">Delivering</span>
+                  <span className="text-xs sm:text-sm text-gray-500">Delivering</span>
                 </div>
 
                 <div className="flex flex-col items-center">
                   <div className="w-8 h-8 rounded-full bg-gray-200 border-4 border-white shadow-sm mb-2"></div>
-                  <span className="text-sm text-gray-500">Completed</span>
+                  <span className="text-xs sm:text-sm text-gray-500">Completed</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Detail order */}
-          <div className="bg-white border-l border-r border-b border-gray-200 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+          <div className="bg-white border-l border-r border-b border-gray-200 p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
               Detail order (3)
             </h2>
 
@@ -82,10 +82,10 @@ export default function OrderDetailPage() {
                   <div className="inline-block px-2 py-1 bg-gray-100 text-xs font-medium text-gray-700 rounded mb-2">
                     24kg
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">
+                  <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">
                     Crabs Delight Premium Asian
                   </h3>
-                  <p className="text-sm text-gray-900">
+                  <p className="text-xs sm:text-sm text-gray-900">
                     1 x <span className="font-semibold">RM849.99</span>
                   </p>
                 </div>
@@ -104,10 +104,10 @@ export default function OrderDetailPage() {
                   <div className="inline-block px-2 py-1 bg-gray-100 text-xs font-medium text-gray-700 rounded mb-2">
                     Large
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1">
+                  <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1">
                     Octopus Large
                   </h3>
-                  <p className="text-sm text-gray-900">
+                  <p className="text-xs sm:text-sm text-gray-900">
                     1 x <span className="font-semibold">RM849.99</span>
                   </p>
                 </div>
@@ -116,18 +116,18 @@ export default function OrderDetailPage() {
           </div>
 
           {/* Order Summary */}
-          <div className="bg-white rounded-b-lg border-l border-r border-b border-gray-200 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+          <div className="bg-white rounded-b-lg border-l border-r border-b border-gray-200 p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
               Order summary
             </h2>
 
             <div className="space-y-3">
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-xs sm:text-sm">
                 <span className="text-gray-600">Subtotal (2 items)</span>
                 <span className="text-gray-900">RM1,844.25</span>
               </div>
 
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-xs sm:text-sm">
                 <div className="flex items-center gap-1">
                   <span className="text-gray-600">Savings</span>
                   <svg
@@ -147,19 +147,19 @@ export default function OrderDetailPage() {
 
               <div className="border-t border-dashed border-gray-200 my-3"></div>
 
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-xs sm:text-sm">
                 <span className="text-gray-600">Shipping</span>
                 <span className="text-green-600">RM0 (Free)</span>
               </div>
 
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-xs sm:text-sm">
                 <span className="text-gray-600">
                   Taxes <span className="text-red-600">10%</span>
                 </span>
                 <span className="text-gray-900">+RM20.00</span>
               </div>
 
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-xs sm:text-sm">
                 <span className="text-gray-600">
                   Discount <span className="text-green-600">20%</span>
                 </span>
@@ -168,10 +168,10 @@ export default function OrderDetailPage() {
 
               <div className="border-t border-gray-200 pt-4 mt-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-900 font-medium">
+                  <span className="text-sm sm:text-base text-gray-900 font-medium">
                     Estimated total
                   </span>
-                  <span className="text-2xl font-bold text-blue-600">
+                  <span className="text-xl sm:text-2xl font-bold text-blue-600">
                     RM1,415.18
                   </span>
                 </div>
@@ -181,10 +181,10 @@ export default function OrderDetailPage() {
         </div>
 
         {/* Right Section - About Order & Payment */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {/* About Order */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
               About order
             </h2>
 
@@ -206,7 +206,7 @@ export default function OrderDetailPage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-semibold text-gray-900 mb-1">
+                  <p className="text-xs sm:text-sm font-semibold text-gray-900 mb-1">
                     ID : #ORD-27102025HS
                   </p>
                   <p className="text-xs text-gray-500">
@@ -216,13 +216,13 @@ export default function OrderDetailPage() {
               </div>
 
               <div className="border-t border-gray-200 pt-4 space-y-3">
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between text-xs sm:text-sm">
                   <span className="text-gray-600">Current status</span>
                   <span className="font-medium text-gray-900">
                     Waiting confirmation
                   </span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between text-xs sm:text-sm">
                   <span className="text-gray-600">Order at</span>
                   <span className="font-medium text-gray-900">
                     Fri, Oct 20, 2025 at 08:10 am
@@ -231,7 +231,7 @@ export default function OrderDetailPage() {
               </div>
 
               <div className="pt-4 space-y-3">
-                <Button className="w-full h-12 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                <Button className="w-full h-11 sm:h-12 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
                   <svg
                     className="w-5 h-5 mr-2"
                     fill="none"
@@ -250,7 +250,7 @@ export default function OrderDetailPage() {
 
                 <Button
                   variant="outline"
-                  className="w-full h-12 text-red-600 border-red-200 hover:bg-red-50"
+                  className="w-full h-11 sm:h-12 text-red-600 border-red-200 hover:bg-red-50"
                 >
                   Cancel order
                 </Button>
@@ -276,8 +276,8 @@ export default function OrderDetailPage() {
           </div>
 
           {/* Payment Method */}
-          <div className="bg-white rounded-lg border border-gray-200 p-6">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">
+          <div className="bg-white rounded-lg border border-gray-200 p-4 sm:p-6">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
               Payment method
             </h2>
 
@@ -289,7 +289,7 @@ export default function OrderDetailPage() {
                 </div>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-semibold text-gray-900 mb-1">
+                <p className="text-xs sm:text-sm font-semibold text-gray-900 mb-1">
                   Credit card
                 </p>
                 <p className="text-xs text-gray-500">Hana Syafitri •••• 9980</p>

@@ -6,9 +6,9 @@ import ProfileSidebar from "@/components/layout/ProfileSidebar";
 
 export default function MyAddressPage() {
   return (
-    <div className="mx-auto px-6 py-8">
+    <div className="mx-auto px-4 sm:px-6 py-4 sm:py-8">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 mb-4 sm:mb-8">
         <Link href="/landing" className="hover:text-gray-900">
           Home
         </Link>
@@ -17,33 +17,33 @@ export default function MyAddressPage() {
       </div>
 
       {/* Main Layout */}
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
         {/* Left Sidebar */}
         <ProfileSidebar activeMenu="My address" />
 
         {/* Main Content */}
         <div className="flex-1">
           {/* Header */}
-          <div className="border rounded-t-lg border-gray-200 p-6 mb-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="border rounded-t-lg border-gray-200 p-4 sm:p-6 mb-0">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
               My address
             </h2>
-            <p className="text-sm text-gray-500">
+            <p className="text-xs sm:text-sm text-gray-500">
               Manage your saved shipping address and add your new address for future orders
             </p>
           </div>
 
           {/* Your address section */}
-          <div className="bg-white border-l border-r border-b rounded-b-lg border-gray-200 p-6">
-            <h3 className="text-lg font-bold text-gray-900 mb-4">
+          <div className="bg-white border-l border-r border-b rounded-b-lg border-gray-200 p-4 sm:p-6">
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-4">
               Your address (3)
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Address 1 - Default */}
-              <div className="border border-gray-200 rounded-lg p-6">
+              <div className="border border-gray-200 rounded-lg p-4 sm:p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <h4 className="font-semibold text-gray-900">Hana Syafitri</h4>
+                  <h4 className="text-sm sm:text-base font-semibold text-gray-900">Hana Syafitri</h4>
                   <span className="text-xs font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
                     Default
                   </span>
@@ -70,7 +70,7 @@ export default function MyAddressPage() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                    <p className="text-sm">
+                    <p className="text-xs sm:text-sm">
                       27 Melati Raya Street, Kebayoran Baru, South Jakarta, DKI Jakarta 12130, Indonesia
                     </p>
                   </div>
@@ -89,7 +89,7 @@ export default function MyAddressPage() {
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
-                    <p className="text-sm">(+62) 812 - 3456 - 7890</p>
+                    <p className="text-xs sm:text-sm">(+62) 812 - 3456 - 7890</p>
                   </div>
                 </div>
 
@@ -129,9 +129,9 @@ export default function MyAddressPage() {
               </div>
 
               {/* Address 2 - Office */}
-              <div className="border border-gray-200 rounded-lg p-6">
+              <div className="border border-gray-200 rounded-lg p-4 sm:p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <h4 className="font-semibold text-gray-900">Office Address</h4>
+                  <h4 className="text-sm sm:text-base font-semibold text-gray-900">Office Address</h4>
                 </div>
 
                 <div className="space-y-3 mb-6">
@@ -155,7 +155,7 @@ export default function MyAddressPage() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                    <p className="text-sm">
+                    <p className="text-xs sm:text-sm">
                       Gatot Subroto Street Kav. 21, Setiabudi, South Jakarta, DKI Jakarta 12950, Indonesia
                     </p>
                   </div>
@@ -174,11 +174,11 @@ export default function MyAddressPage() {
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
-                    <p className="text-sm">(+62) 811 - 2345 - 6789</p>
+                    <p className="text-xs sm:text-sm">(+62) 811 - 2345 - 6789</p>
                   </div>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <Button variant="outline" className="flex-1 text-gray-700 border-gray-300 hover:bg-gray-50">
                     Set as default
                   </Button>
@@ -217,9 +217,9 @@ export default function MyAddressPage() {
               </div>
 
               {/* Address 3 - Adji Hermawan */}
-              <div className="border border-gray-200 rounded-lg p-6">
+              <div className="border border-gray-200 rounded-lg p-4 sm:p-6">
                 <div className="flex items-start justify-between mb-4">
-                  <h4 className="font-semibold text-gray-900">Adji Hermawan</h4>
+                  <h4 className="text-sm sm:text-base font-semibold text-gray-900">Adji Hermawan</h4>
                 </div>
 
                 <div className="space-y-3 mb-6">
@@ -243,7 +243,7 @@ export default function MyAddressPage() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                    <p className="text-sm">
+                    <p className="text-xs sm:text-sm">
                       Jl. Raya Darmo No. 88, Apt. 3B, Kelurahan Darmo, Kecamatan Wonokromo, Surabaya, East Java 60241, Indonesia
                     </p>
                   </div>
@@ -262,11 +262,11 @@ export default function MyAddressPage() {
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
-                    <p className="text-sm">(+62) 812 - 3456 - 7890</p>
+                    <p className="text-xs sm:text-sm">(+62) 812 - 3456 - 7890</p>
                   </div>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <Button variant="outline" className="flex-1 text-gray-700 border-gray-300 hover:bg-gray-50">
                     Set as default
                   </Button>
@@ -321,7 +321,7 @@ export default function MyAddressPage() {
                     />
                   </svg>
                 </div>
-                <p className="text-gray-900 font-medium">Add new address</p>
+                <p className="text-sm sm:text-base text-gray-900 font-medium">Add new address</p>
               </div>
             </div>
           </div>

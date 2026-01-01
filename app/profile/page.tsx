@@ -15,9 +15,9 @@ import ProfileSidebar from "@/components/layout/ProfileSidebar";
 
 export default function ProfilePage() {
   return (
-    <div className="mx-auto px-6 py-8">
+    <div className="mx-auto px-4 sm:px-6 py-4 sm:py-8">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 mb-4 sm:mb-8">
         <Link href="/landing" className="hover:text-gray-900">
           Home
         </Link>
@@ -26,28 +26,28 @@ export default function ProfilePage() {
       </div>
 
       {/* Main Layout */}
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
         {/* Left Sidebar */}
         <ProfileSidebar activeMenu="My account" />
 
         {/* Main Content */}
         <div className="flex-1">
           {/* Header - spanning both columns */}
-          <div className="border-t border-l border-r rounded-t-lg border-b border-gray-200 p-6 mb-0">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="border-t border-l border-r rounded-t-lg border-b border-gray-200 p-4 sm:p-6 mb-0">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
               My account
             </h2>
-            <p className="text-sm text-gray-500">
+            <p className="text-xs sm:text-sm text-gray-500">
               Edit or complete your account information, including your data
               security.
             </p>
           </div>
 
           {/* Content Row */}
-          <div className="flex gap-0">
+          <div className="flex flex-col lg:flex-row gap-0">
             {/* Form Section */}
-            <div className="flex-1 bg-white border-l border-r border-b border-gray-200 rounded-bl-lg p-8">
-              <div className="space-y-5">
+            <div className="flex-1 bg-white border-l border-r border-b lg:border-b border-gray-200 rounded-b-lg lg:rounded-bl-lg lg:rounded-br-none p-4 sm:p-6 lg:p-8">
+              <div className="space-y-4 sm:space-y-5">
                 {/* Full name */}
                 <div>
                   <Label
@@ -148,33 +148,33 @@ export default function ProfilePage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-3 mt-8">
+              <div className="flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8">
                 <Button
                   variant="outline"
-                  className="px-8 h-12 text-gray-700 border-gray-300"
+                  className="px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base text-gray-700 border-gray-300 w-full sm:w-auto"
                 >
                   Reset all
                 </Button>
-                <Button className="px-8 h-12 bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white">
+                <Button className="px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base bg-linear-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white w-full sm:w-auto">
                   Save change
                 </Button>
               </div>
             </div>
 
             {/* Right Sidebar */}
-            <div className="w-96 shrink-0 border-r border-b border-gray-200 rounded-br-lg overflow-hidden">
+            <div className="w-full lg:w-96 shrink-0 border-l lg:border-l-0 border-r border-b border-t lg:border-t-0 border-gray-200 rounded-b-lg lg:rounded-bl-none lg:rounded-br-lg overflow-hidden mt-0">
               {/* Profile Card */}
               <div 
-                className="bg-white p-8"
+                className="bg-white p-4 sm:p-6 lg:p-8"
                 style={{
                   background: "linear-gradient(to bottom, #EBF0FEB2, #EBF0FE00)",
                 }}
               >
-                <div className="pb-8">
-                  <div className="flex justify-end mb-6">
-                    <button className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900">
+                <div className="pb-6 sm:pb-8">
+                  <div className="flex justify-end mb-4 sm:mb-6">
+                    <button className="flex items-center gap-2 text-xs sm:text-sm font-medium text-gray-600 hover:text-gray-900">
                       <svg
-                        className="w-4 h-4"
+                        className="w-3.5 h-3.5 sm:w-4 sm:h-4"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -190,8 +190,8 @@ export default function ProfilePage() {
                     </button>
                   </div>
 
-                  <div className="flex justify-start">
-                    <div className="relative w-40 h-40">
+                  <div className="flex justify-center lg:justify-start">
+                    <div className="relative w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40">
                       <div className="w-full h-full rounded-full overflow-hidden border-4 border-dashed border-gray-300">
                         <img
                           src="/api/placeholder/160/160"
@@ -203,12 +203,12 @@ export default function ProfilePage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-start mb-8">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                <div className="flex flex-col items-center lg:items-start mb-6 sm:mb-8">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 text-center lg:text-left">
                     Hana Syafitri
                   </h3>
 
-                  <div className="flex items-start gap-2 text-sm text-gray-600 mb-2">
+                  <div className="flex items-start gap-2 text-xs sm:text-sm text-gray-600 mb-2">
                     <svg
                       className="w-5 h-5"
                       fill="none"
@@ -243,22 +243,22 @@ export default function ProfilePage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg border border-gray-200 mb-6">
-                  <div className="flex flex-row">
-                    <div className="p-6">
-                      <p className="text-xs text-gray-500 mb-2">
+                <div className="bg-white rounded-lg border border-gray-200 mb-4 sm:mb-6">
+                  <div className="flex flex-col sm:flex-row">
+                    <div className="p-4 sm:p-6 flex-1">
+                      <p className="text-xs text-gray-500 mb-1 sm:mb-2">
                         Product purchase
                       </p>
-                      <p className="text-lg font-bold text-gray-900">
+                      <p className="text-base sm:text-lg font-bold text-gray-900">
                         65 Products
                       </p>
                     </div>
-                    <div className="border-r border-gray-200" />
-                    <div className="p-6">
-                      <p className="text-xs text-gray-500 mb-2">
+                    <div className="border-t sm:border-t-0 sm:border-r border-gray-200" />
+                    <div className="p-4 sm:p-6 flex-1">
+                      <p className="text-xs text-gray-500 mb-1 sm:mb-2">
                         Total Payment
                       </p>
-                      <p className="text-lg font-bold text-gray-900">
+                      <p className="text-base sm:text-lg font-bold text-gray-900">
                         RM5,230.00
                       </p>
                     </div>
@@ -266,9 +266,9 @@ export default function ProfilePage() {
                 </div>
 
                 {/* Forgot Password Card */}
-                <div className="bg-white -mx-8 px-8 pt-6 border-t border-gray-200">
-                  <div className="flex justify-center mb-6">
-                    <div className="w-40 h-40">
+                <div className="bg-white -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 border-t border-gray-200">
+                  <div className="flex justify-center mb-4 sm:mb-6">
+                    <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40">
                       <svg
                         viewBox="0 0 200 200"
                         fill="none"
@@ -301,18 +301,18 @@ export default function ProfilePage() {
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 text-center lg:text-left">
                     Forgot password?
                   </h3>
 
-                  <p className="text-sm text-gray-500 mb-6">
+                  <p className="text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6 text-center lg:text-left">
                     Don&apos;t worry, you can create a new password for your
                     account.
                   </p>
 
                   <Button
                     variant="outline"
-                    className="w-full h-12 bg-gray-100 border-0 text-gray-900 hover:bg-gray-200 font-medium"
+                    className="w-full h-11 sm:h-12 text-sm sm:text-base bg-gray-100 border-0 text-gray-900 hover:bg-gray-200 font-medium"
                   >
                     Reset password
                   </Button>

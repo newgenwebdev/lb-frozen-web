@@ -42,22 +42,22 @@ export function AddAddressDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="text-blue-600 font-medium hover:text-blue-700 flex items-center gap-1">
+        <button className="text-blue-600 font-medium hover:text-blue-700 flex items-center gap-1 text-sm lg:text-base">
           <span className="text-xl">+</span> New address
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-225 w-[90vw] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-[95vw] lg:max-w-225 w-full max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">
+          <DialogTitle className="text-xl lg:text-2xl font-bold">
             Add new delivery address
           </DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6 mt-6">
+        <div className="space-y-4 lg:space-y-6 mt-4 lg:mt-6">
           {/* First Name and Last Name */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="firstName" className="text-sm font-medium">
+              <Label htmlFor="firstName" className="text-xs lg:text-sm font-medium">
                 First name
               </Label>
               <Input
@@ -65,11 +65,11 @@ export function AddAddressDialog() {
                 placeholder="Ahmad"
                 value={formData.firstName}
                 onChange={(e) => handleInputChange("firstName", e.target.value)}
-                className="h-12 px-3 py-2"
+                className="h-10 lg:h-12 px-3 py-2 text-sm lg:text-base"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="lastName" className="text-sm font-medium">
+              <Label htmlFor="lastName" className="text-xs lg:text-sm font-medium">
                 Last name
               </Label>
               <Input
@@ -77,22 +77,22 @@ export function AddAddressDialog() {
                 placeholder="Fauzi"
                 value={formData.lastName}
                 onChange={(e) => handleInputChange("lastName", e.target.value)}
-                className="h-12 px-3 py-2"
+                className="h-10 lg:h-12 px-3 py-2 text-sm lg:text-base"
               />
             </div>
           </div>
 
           {/* City and State */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="city" className="text-sm font-medium">
+              <Label htmlFor="city" className="text-xs lg:text-sm font-medium">
                 City
               </Label>
               <Select
                 value={formData.city}
                 onValueChange={(value) => handleInputChange("city", value)}
               >
-                <SelectTrigger className="h-12! w-full px-3! py-2!">
+                <SelectTrigger className="h-10! lg:h-12! w-full px-3! py-2! text-sm lg:text-base">
                   <SelectValue placeholder="Kuala Lumpur" />
                 </SelectTrigger>
                 <SelectContent>
@@ -105,14 +105,14 @@ export function AddAddressDialog() {
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="state" className="text-sm font-medium">
+              <Label htmlFor="state" className="text-xs lg:text-sm font-medium">
                 State
               </Label>
               <Select
                 value={formData.state}
                 onValueChange={(value) => handleInputChange("state", value)}
               >
-                <SelectTrigger className="h-12! w-full px-3! py-2!">
+                <SelectTrigger className="h-10! lg:h-12! w-full px-3! py-2! text-sm lg:text-base">
                   <SelectValue placeholder="Kuala Lumpur" />
                 </SelectTrigger>
                 <SelectContent>
@@ -127,9 +127,9 @@ export function AddAddressDialog() {
           </div>
 
           {/* Building Type and Building Number */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="buildingType" className="text-sm font-medium">
+              <Label htmlFor="buildingType" className="text-xs lg:text-sm font-medium">
                 Building type
               </Label>
               <Select
@@ -138,7 +138,7 @@ export function AddAddressDialog() {
                   handleInputChange("buildingType", value)
                 }
               >
-                <SelectTrigger className="h-12! w-full px-3! py-2!">
+                <SelectTrigger className="h-10! lg:h-12! w-full px-3! py-2! text-sm lg:text-base">
                   <SelectValue placeholder="Apartment" />
                 </SelectTrigger>
                 <SelectContent>
@@ -150,7 +150,7 @@ export function AddAddressDialog() {
               </Select>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="buildingNumber" className="text-sm font-medium">
+              <Label htmlFor="buildingNumber" className="text-xs lg:text-sm font-medium">
                 Building number
               </Label>
               <Input
@@ -160,21 +160,21 @@ export function AddAddressDialog() {
                 onChange={(e) =>
                   handleInputChange("buildingNumber", e.target.value)
                 }
-                className="h-12 px-3 py-2"
+                className="h-10 lg:h-12 px-3 py-2 text-sm lg:text-base"
               />
             </div>
           </div>
 
           {/* Phone Number and Zip Code */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4">
             <div className="space-y-2">
-              <Label htmlFor="phoneNumber" className="text-sm font-medium">
+              <Label htmlFor="phoneNumber" className="text-xs lg:text-sm font-medium">
                 Phone number
               </Label>
               <div className="flex gap-2">
-                <div className="flex items-center gap-2 px-3 border rounded-lg bg-gray-50 h-12">
-                  <span className="text-lg">🇲🇾</span>
-                  <span className="text-sm font-medium">+60</span>
+                <div className="flex items-center gap-2 px-2 lg:px-3 border rounded-lg bg-gray-50 h-10 lg:h-12">
+                  <span className="text-base lg:text-lg">🇲🇾</span>
+                  <span className="text-xs lg:text-sm font-medium">+60</span>
                 </div>
                 <Input
                   id="phoneNumber"
@@ -183,12 +183,12 @@ export function AddAddressDialog() {
                   onChange={(e) =>
                     handleInputChange("phoneNumber", e.target.value)
                   }
-                  className="h-12 px-3 py-2 flex-1"
+                  className="h-10 lg:h-12 px-3 py-2 flex-1 text-sm lg:text-base"
                 />
               </div>
             </div>
             <div className="space-y-2">
-              <Label htmlFor="zipCode" className="text-sm font-medium">
+              <Label htmlFor="zipCode" className="text-xs lg:text-sm font-medium">
                 Zip Code
               </Label>
               <Input
@@ -196,14 +196,14 @@ export function AddAddressDialog() {
                 placeholder="50050"
                 value={formData.zipCode}
                 onChange={(e) => handleInputChange("zipCode", e.target.value)}
-                className="h-12 px-3 py-2"
+                className="h-10 lg:h-12 px-3 py-2 text-sm lg:text-base"
               />
             </div>
           </div>
 
           {/* Full Address */}
           <div className="space-y-2">
-            <Label htmlFor="fullAddress" className="text-sm font-medium">
+            <Label htmlFor="fullAddress" className="text-xs lg:text-sm font-medium">
               Full address
             </Label>
             <Textarea
@@ -211,24 +211,24 @@ export function AddAddressDialog() {
               placeholder="No 10, Jalan Bukit, Taman Impian, 50050 Kuala Lumpur, Malaysia"
               value={formData.fullAddress}
               onChange={(e) => handleInputChange("fullAddress", e.target.value)}
-              className="min-h-30 resize-none"
+              className="min-h-24 lg:min-h-30 resize-none text-sm lg:text-base"
             />
           </div>
 
           {/* Set as default address and Confirm Button */}
-          <div className="flex items-center justify-between pt-4">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 lg:gap-0 pt-3 lg:pt-4">
             <div className="flex items-center gap-3">
               <Switch
                 id="default-address"
                 checked={isDefaultAddress}
                 onCheckedChange={setIsDefaultAddress}
               />
-              <Label htmlFor="default-address" className="text-base font-medium cursor-pointer">
+              <Label htmlFor="default-address" className="text-sm lg:text-base font-medium cursor-pointer">
                 Set as default address
               </Label>
             </div>
             <Button
-              className="px-8 py-6 text-white font-semibold rounded-full"
+              className="w-full lg:w-auto px-6 lg:px-8 py-5 lg:py-6 text-sm lg:text-base text-white font-semibold rounded-full"
               style={{
                 background: "linear-gradient(to bottom, #23429B, #C52129)",
               }}

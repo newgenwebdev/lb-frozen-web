@@ -55,31 +55,31 @@ export default function CartPage() {
   return (
     <div className="relative">
       {/* Border vertical yang nyambung dari navbar */}
-      <div className="absolute left-0 right-0 top-0 bottom-0 mx-auto pr-6">
+      <div className="hidden lg:block absolute left-0 right-0 top-0 bottom-0 mx-auto pr-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 h-full">
           <div className="lg:col-span-2 border-r border-gray-200" />
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative mx-auto pr-6 pt-4">
-        <div className="flex items-center align-middle justify-between mb-8 ml-10 mr-8">
-          <h1 className="text-3xl font-bold text-gray-900">
+      <div className="relative mx-auto px-4 lg:px-0 lg:pr-6 pt-4">
+        <div className="flex items-center align-middle justify-between mb-6 lg:mb-8 lg:ml-10 lg:mr-8">
+          <h1 className="text-xl lg:text-3xl font-bold text-gray-900">
             Your carts ({cartItems.length} items)
           </h1>
-          <button className="text-red-600 font-medium hover:text-red-700 transition-colors">
+          <button className="text-sm lg:text-base text-red-600 font-medium hover:text-red-700 transition-colors">
             Clear all
           </button>
           <div className=""></div>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Left Column - Cart Items */}
-          <div className="lg:col-span-2 border border-gray-200">
-            <div className="space-y-6 px-6 py-6">
+          <div className="lg:col-span-2 lg:border lg:border-gray-200">
+            <div className="space-y-6 px-4 py-4 lg:px-6 lg:py-6">
               {cartItems.map((item) => (
                 <div
                   key={item.id}
-                  className="flex items-center gap-6"
+                  className="flex items-start lg:items-center gap-3 lg:gap-6 bg-white lg:bg-transparent p-4 lg:p-0 rounded-2xl lg:rounded-none border lg:border-0 border-gray-200"
                 >
                   {/* Checkbox */}
                   <Checkbox
@@ -88,19 +88,19 @@ export default function CartPage() {
                   />
 
                   {/* Product Image */}
-                  <div className="w-65 h-50 bg-gray-100 rounded-3xl flex items-center justify-center shrink-0">
-                    <div className="text-gray-400 text-sm">Image</div>
+                  <div className="w-20 h-20 lg:w-65 lg:h-50 bg-gray-100 rounded-2xl lg:rounded-3xl flex items-center justify-center shrink-0">
+                    <div className="text-gray-400 text-xs lg:text-sm">Image</div>
                   </div>
 
                   {/* Product Details */}
-                  <div className="flex-1 flex flex-col justify-between min-h-50">
+                  <div className="flex-1 flex flex-col justify-between min-h-20 lg:min-h-50">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                      <h3 className="text-base lg:text-xl font-semibold text-gray-900 mb-2 lg:mb-4">
                         {item.name}
                       </h3>
                       
                       {/* Weight Dropdown */}
-                      <select className="px-4 py-2.5 border border-gray-300 rounded-full text-sm bg-white min-w-30">
+                      <select className="px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 rounded-full text-xs lg:text-sm bg-white min-w-24 lg:min-w-30">
                         {item.weightOptions.map((weight) => (
                           <option key={weight} value={weight}>
                             {weight}
@@ -113,22 +113,22 @@ export default function CartPage() {
                     <div className="flex items-center justify-between mt-auto">
                       {/* Price */}
                       <div>
-                        <div className="text-2xl font-bold text-gray-900 mb-1">
+                        <div className="text-lg lg:text-2xl font-bold text-gray-900 mb-0.5 lg:mb-1">
                           RM{item.price.toFixed(2)}
                         </div>
-                        <div className="text-sm text-red-500 line-through">
+                        <div className="text-xs lg:text-sm text-red-500 line-through">
                           RM{item.originalPrice.toFixed(2)}
                         </div>
                       </div>
 
                       {/* Quantity Controls */}
-                      <div className="flex items-center gap-4">
-                        <button className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors">
-                          <span className="text-xl text-gray-600">−</span>
+                      <div className="flex items-center gap-2 lg:gap-4">
+                        <button className="w-8 h-8 lg:w-10 lg:h-10 bg-gray-100 rounded-lg lg:rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors">
+                          <span className="text-lg lg:text-xl text-gray-600">−</span>
                         </button>
-                        <span className="text-lg font-medium w-8 text-center">{item.quantity}</span>
-                        <button className="w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors">
-                          <span className="text-xl text-gray-600">+</span>
+                        <span className="text-sm lg:text-lg font-medium w-6 lg:w-8 text-center">{item.quantity}</span>
+                        <button className="w-8 h-8 lg:w-10 lg:h-10 bg-gray-100 rounded-lg lg:rounded-xl flex items-center justify-center hover:bg-gray-200 transition-colors">
+                          <span className="text-lg lg:text-xl text-gray-600">+</span>
                         </button>
                       </div>
                     </div>
@@ -140,7 +140,7 @@ export default function CartPage() {
 
           {/* Right Column - Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-gray-50 rounded-2xl p-4 mb-4">
+            <div className="bg-gray-50 rounded-2xl p-3 lg:p-4 mb-4">
               {/* Shipping Address */}
               <div className="bg-white rounded-2xl p-4 mb-4">
                 <button

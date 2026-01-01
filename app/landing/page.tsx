@@ -26,18 +26,18 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <ProtectedNavbar />
-      
+
       {/* Main Content */}
-      <div className="mx-auto px-6 py-8 bg-white">
+      <div className="mx-auto px-4 lg:px-6 py-4 lg:py-8 bg-white">
         {/* Hero Banner */}
         <div
-          className="relative bg-linear-to-b from-[#23429B] to-[#C52129] rounded-3xl overflow-hidden mb-12"
+          className="relative bg-linear-to-b from-[#23429B] to-[#C52129] rounded-3xl overflow-hidden mb-8 lg:mb-12"
           style={{ height: "480px" }}
         >
           <div className="absolute inset-0">
             {/* Left Content */}
             <div
-              className="absolute left-12 text-white z-10"
+              className="absolute left-6 lg:left-12 text-white z-10"
               style={{ width: "306px", top: "60px" }}
             >
               <h1
@@ -128,13 +128,13 @@ export default function LandingPage() {
 
         {/* Browse Categories */}
         <div className="mb-8">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-4 sm:mb-6">
             <h2 className="text-2xl font-bold text-gray-900">
               Browse categories
             </h2>
             <a
               href="#"
-              className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+              className="hidden lg:flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
             >
               View all
               <svg
@@ -153,7 +153,7 @@ export default function LandingPage() {
             </a>
           </div>
 
-          <div className="grid grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
             {categories.map((category, index) => (
               <div
                 key={index}
@@ -174,33 +174,56 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
+
+          {/* Mobile View All Button */}
+          <div className="lg:hidden mt-4 text-center">
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+            >
+              View all
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Today's Flash Deals - Full Width Red Section */}
       <div className="bg-[#C52129] py-8">
-        <div className="mx-auto px-6">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-3xl font-bold text-white">
+        <div className="mx-auto px-4 lg:px-6">
+          <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between">
+            <h2 className="text-2xl lg:text-3xl font-bold text-white">
               Today's flash deals
             </h2>
-            <div className="flex gap-2">
-              <div className="bg-white rounded-lg px-4 py-2 text-center min-w-15">
-                <span className="text-2xl font-bold text-gray-900">00</span>
+            <div className="flex gap-2 overflow-x-auto">
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
+                <span className="text-xl lg:text-2xl font-bold text-gray-900">00</span>
               </div>
-              <div className="bg-white rounded-lg px-4 py-2 text-center min-w-15">
-                <span className="text-2xl font-bold text-gray-900">02</span>
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
+                <span className="text-xl lg:text-2xl font-bold text-gray-900">02</span>
               </div>
-              <div className="bg-white rounded-lg px-4 py-2 text-center min-w-15">
-                <span className="text-2xl font-bold text-gray-900">45</span>
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
+                <span className="text-xl lg:text-2xl font-bold text-gray-900">45</span>
               </div>
-              <div className="bg-white rounded-lg px-4 py-2 text-center min-w-15">
-                <span className="text-2xl font-bold text-gray-900">16</span>
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
+                <span className="text-xl lg:text-2xl font-bold text-gray-900">16</span>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Product 1 - Crab */}
             <div className="bg-white rounded-xl overflow-hidden">
               <div className="relative">
@@ -226,7 +249,7 @@ export default function LandingPage() {
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">
+                <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">
                   Crab Delights (2nd Edition)
                 </h3>
                 <div className="flex items-center gap-1 mb-2">
@@ -486,13 +509,13 @@ export default function LandingPage() {
       </div>
 
       {/* Products on Trend This Month - Blue Section */}
-      <div className="bg-[#23429B] py-12">
-        <div className="mx-auto px-6">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-4xl font-bold text-white">
+      <div className="bg-[#23429B] py-8 lg:py-12">
+        <div className="mx-auto px-4 lg:px-6">
+          <div className="flex flex-col gap-4 mb-6 lg:flex-row lg:items-center lg:justify-between lg:mb-8">
+            <h2 className="text-2xl lg:text-4xl font-bold text-white">
               Products on trend this month
             </h2>
-            <div className="flex gap-2">
+            <div className="hidden lg:flex gap-2">
               <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
                 <svg
                   className="w-6 h-6"
@@ -526,7 +549,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {/* Product 1 */}
             <div className="bg-white rounded-2xl overflow-hidden">
               <div className="relative">
@@ -928,19 +951,53 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+
+          {/* Mobile Navigation - Bottom */}
+          <div className="flex lg:hidden justify-end gap-2 mt-6">
+            <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Top Products by Categories */}
-      <div className="bg-gray-50 py-12">
-        <div className="mx-auto px-6">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-4xl font-bold text-gray-900">
+      <div className="bg-gray-50 py-8 lg:py-12">
+        <div className="mx-auto px-4 lg:px-6">
+          <div className="flex flex-col gap-3 mb-6 lg:flex-row lg:items-center lg:justify-between lg:mb-8">
+            <h2 className="text-2xl lg:text-4xl font-bold text-gray-900">
               Top products by categories
             </h2>
             <a
               href="#"
-              className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
+              className="hidden lg:flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium"
             >
               View all
               <svg
@@ -959,14 +1016,14 @@ export default function LandingPage() {
             </a>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Left Side - Promo Card */}
-            <div className="bg-linear-to-b from-[#C52129] to-[#203C8D] rounded-3xl p-8 text-white relative overflow-hidden">
+            <div className="bg-linear-to-b from-[#C52129] to-[#203C8D] rounded-2xl lg:rounded-3xl p-6 lg:p-8 text-white relative overflow-hidden min-h-75 lg:min-h-0">
               <div className="relative z-10">
-                <div className="inline-block bg-[#23429B] px-4 py-2 rounded-lg text-xs font-medium mb-4">
+                <div className="inline-block bg-[#23429B] px-3 lg:px-4 py-1.5 lg:py-2 rounded-lg text-[10px] lg:text-xs font-medium mb-3 lg:mb-4">
                   FRESH SEAFOOD, EXCLUSIVE OFFERS
                 </div>
-                <h3 className="text-3xl font-bold mb-3 leading-tight">
+                <h3 className="text-2xl lg:text-3xl font-bold mb-2 lg:mb-3 leading-tight">
                   Enjoy up to 40%
                   <br />
                   OFF on our
@@ -975,15 +1032,15 @@ export default function LandingPage() {
                   <br />
                   seafood!
                 </h3>
-                <p className="text-sm mb-4 opacity-90">
+                <p className="text-xs lg:text-sm mb-3 lg:mb-4 opacity-90">
                   Explore the flavors that catch attention
                   <br />
                   before the deal disappears!
                 </p>
-                <button className="bg-white text-[#23429B] px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-100 flex items-center gap-2">
+                <button className="bg-white text-[#23429B] px-4 lg:px-5 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-semibold hover:bg-gray-100 flex items-center gap-2">
                   View all
                   <svg
-                    className="w-4 h-4"
+                    className="w-3 h-3 lg:w-4 lg:h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -998,9 +1055,9 @@ export default function LandingPage() {
                 </button>
               </div>
 
-              {/* Blue Elliptical Rings Behind Lobster */}
+              {/* Blue Elliptical Rings Behind Lobster - Desktop */}
               <div
-                className="absolute rounded-full"
+                className="hidden lg:block absolute rounded-full"
                 style={{
                   width: "600px",
                   height: "600px",
@@ -1011,7 +1068,7 @@ export default function LandingPage() {
                 }}
               ></div>
               <div
-                className="absolute rounded-full"
+                className="hidden lg:block absolute rounded-full"
                 style={{
                   width: "420px",
                   height: "420px",
@@ -1022,9 +1079,33 @@ export default function LandingPage() {
                 }}
               ></div>
 
-              {/* Lobster Image */}
+              {/* Blue Elliptical Rings Behind Lobster - Mobile */}
               <div
-                className="absolute"
+                className="lg:hidden absolute rounded-full"
+                style={{
+                  width: "300px",
+                  height: "300px",
+                  bottom: "-200px",
+                  right: "-100px",
+                  border: "30px solid #192F6E",
+                  zIndex: 1,
+                }}
+              ></div>
+              <div
+                className="lg:hidden absolute rounded-full"
+                style={{
+                  width: "210px",
+                  height: "210px",
+                  bottom: "-157px",
+                  right: "-60px",
+                  border: "25px solid #192F6E",
+                  zIndex: 1,
+                }}
+              ></div>
+
+              {/* Lobster Image - Desktop */}
+              <div
+                className="hidden lg:block absolute"
                 style={{
                   width: "400px",
                   height: "400px",
@@ -1038,6 +1119,27 @@ export default function LandingPage() {
                   alt="Lobster"
                   width={400}
                   height={400}
+                  className="object-contain"
+                  style={{ transform: "rotate(45deg)", opacity: 1 }}
+                />
+              </div>
+
+              {/* Lobster Image - Mobile */}
+              <div
+                className="lg:hidden absolute"
+                style={{
+                  width: "200px",
+                  height: "200px",
+                  bottom: "-50px",
+                  right: "-30px",
+                  zIndex: 2,
+                }}
+              >
+                <Image
+                  src="/lobster-bg-removed.png"
+                  alt="Lobster"
+                  width={200}
+                  height={200}
                   className="object-contain"
                   style={{ transform: "rotate(45deg)", opacity: 1 }}
                 />
@@ -1084,7 +1186,7 @@ export default function LandingPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {/* Product 1 - Crab */}
                 <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                   <div className="relative">
@@ -1321,12 +1423,12 @@ export default function LandingPage() {
       </div>
 
       {/* Check out the seafood buyer Section */}
-      <div className="mx-auto px-6 py-12">
-        <div className="flex items-center justify-between mb-6 bg-[#F9F9F9]">
-          <h2 className="text-3xl font-bold text-gray-900">
+      <div className="mx-auto px-4 lg:px-6 py-8 lg:py-12">
+        <div className="flex flex-col gap-3 mb-6 lg:flex-row lg:items-center lg:justify-between lg:mb-6 bg-[#F9F9F9]">
+          <h2 className="text-xl lg:text-3xl font-bold text-gray-900">
             Check out the seafood buyer, then dive into purchasing online.
           </h2>
-          <div className="flex gap-2">
+          <div className="hidden lg:flex gap-2">
             <button className="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-100">
               <svg
                 className="w-5 h-5"
@@ -1360,7 +1462,7 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Video Card 1 - Crab */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
             <div className="relative aspect-4/3 bg-gray-900 group cursor-pointer">
@@ -1670,6 +1772,40 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Mobile Navigation - Bottom */}
+        <div className="flex lg:hidden justify-end gap-2 mt-6">
+          <button className="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-100">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button className="w-10 h-10 bg-white border border-gray-200 rounded-lg flex items-center justify-center hover:bg-gray-100">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 

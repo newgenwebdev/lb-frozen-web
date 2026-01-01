@@ -10,20 +10,20 @@ export default function ProfileSidebar({
   activeMenu,
 }: ProfileSidebarProps) {
   return (
-    <div className="w-56 shrink-0">
-      <h1 className="text-2xl font-bold mb-6">Profile & settings</h1>
+    <div className="w-full lg:w-56 shrink-0">
+      <h1 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Profile & settings</h1>
 
-      <nav className="space-y-1">
+      <nav className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0">
         <Link
           href="/profile"
-          className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+          className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
             activeMenu === "My account"
               ? "bg-gray-100 text-gray-900"
               : "text-gray-600 hover:bg-gray-50"
           }`}
         >
           <svg
-            className="w-5 h-5"
+            className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -35,20 +35,20 @@ export default function ProfileSidebar({
               d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
             />
           </svg>
-          My account
+          <span className="lg:inline">My account</span>
         </Link>
 
         <Link
           href="/orders"
-          className={`w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+          className={`flex items-center justify-between gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
             activeMenu === "My orders"
               ? "bg-gray-100 text-gray-900"
               : "text-gray-600 hover:bg-gray-50"
           }`}
         >
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -60,23 +60,23 @@ export default function ProfileSidebar({
                 d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
               />
             </svg>
-            My orders
+            <span className="lg:inline">My orders</span>
           </div>
-          <span className="bg-[#23429B] text-white text-xs font-bold px-2 py-0.5 rounded-full">
+          <span className="bg-[#23429B] text-white text-[10px] sm:text-xs font-bold px-1.5 sm:px-2 py-0.5 rounded-full">
             4
           </span>
         </Link>
 
         <Link
           href="/payment-method"
-          className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+          className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
             activeMenu === "Payment method"
               ? "bg-gray-100 text-gray-900"
               : "text-gray-600 hover:bg-gray-50"
           }`}
         >
           <svg
-            className="w-5 h-5"
+            className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -88,19 +88,19 @@ export default function ProfileSidebar({
               d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
             />
           </svg>
-          Payment method
+          <span className="lg:inline">Payment method</span>
         </Link>
 
         <Link
           href="/my-address"
-          className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+          className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
             activeMenu === "My address"
               ? "bg-gray-100 text-gray-900"
               : "text-gray-600 hover:bg-gray-50"
           }`}
         >
           <svg
-            className="w-5 h-5"
+            className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -118,19 +118,19 @@ export default function ProfileSidebar({
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-          My address
+          <span className="lg:inline">My address</span>
         </Link>
 
         <Link
           href="/help-support"
-          className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+          className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap ${
             activeMenu === "Help and Support"
               ? "bg-gray-100 text-gray-900"
               : "text-gray-600 hover:bg-gray-50"
           }`}
         >
           <svg
-            className="w-5 h-5"
+            className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -142,12 +142,12 @@ export default function ProfileSidebar({
               d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
             />
           </svg>
-          Help and Support
+          <span className="lg:inline">Help and Support</span>
         </Link>
 
-        <button className="w-full flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-red-600 hover:bg-red-50 transition-colors mt-4">
+        <button className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-medium text-red-600 hover:bg-red-50 transition-colors mt-2 lg:mt-4 whitespace-nowrap">
           <svg
-            className="w-5 h-5"
+            className="w-4 h-4 sm:w-5 sm:h-5 shrink-0"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -159,7 +159,7 @@ export default function ProfileSidebar({
               d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
             />
           </svg>
-          Logout
+          <span className="lg:inline">Logout</span>
         </button>
       </nav>
     </div>

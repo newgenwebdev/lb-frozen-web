@@ -91,25 +91,52 @@ function SearchResultsContent() {
   const [categoriesOpen, setCategoriesOpen] = useState(true);
   const [deliveryOpen, setDeliveryOpen] = useState(true);
   const [ratingsOpen, setRatingsOpen] = useState(true);
+  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-white">
       <ProtectedNavbar />
 
-      <div className="flex">
-        {/* Left Sidebar - Filters */}
+      <div className="flex flex-col lg:flex-row">
+        {/* Mobile Filter Toggle Button */}
+        <button
+          onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
+          className="lg:hidden sticky top-0 z-10 flex items-center justify-center gap-2 px-4 py-3 bg-white border-b border-gray-200 text-sm font-medium"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+          </svg>
+          Filters
+        </button>
 
-        <div className="w-72 p-6 min-h-screen">
+        {/* Left Sidebar - Filters */}
+        <div className={`${
+          mobileFiltersOpen ? 'fixed inset-0 z-300 bg-white overflow-y-auto' : 'hidden'
+        } lg:block lg:relative lg:w-72 lg:p-6 min-h-screen`}>
+          {/* Mobile Close Button */}
+          <div className="lg:hidden sticky top-0 bg-white z-10 flex items-center justify-between p-4 border-b border-gray-200">
+            <h2 className="text-lg font-bold">Filters</h2>
+            <button
+              onClick={() => setMobileFiltersOpen(false)}
+              className="p-2 hover:bg-gray-100 rounded-full"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="p-4 lg:p-0">
           <div className="space-y-2 mb-4">
-            <h1 className="font-bold">Filter</h1>
-            <div className="border-b-2 border-gray-200 border-dotted" />
+            <h1 className="text-base lg:text-lg font-bold hidden lg:block">Filter</h1>
+            <div className="border-b-2 border-gray-200 border-dotted hidden lg:block" />
           </div>
 
           {/* Categories */}
           <Collapsible open={categoriesOpen} onOpenChange={setCategoriesOpen}>
             <div className="mb-6">
               <CollapsibleTrigger className="flex items-center justify-between mb-3 w-full">
-                <h3 className="font-semibold">Categories</h3>
+                <h3 className="text-sm lg:text-base font-semibold">Categories</h3>
                 <svg
                   className={`w-4 h-4 transition-transform ${
                     categoriesOpen ? "" : "rotate-180"
@@ -131,7 +158,7 @@ function SearchResultsContent() {
                   <input
                     type="text"
                     placeholder="Find categories"
-                    className="w-full pl-3 pr-8 py-2 border border-gray-200 rounded-lg text-sm"
+                    className="w-full pl-3 pr-8 py-2 border border-gray-200 rounded-lg text-xs lg:text-sm"
                   />
                   <svg
                     className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
@@ -183,7 +210,7 @@ function SearchResultsContent() {
           <Collapsible open={deliveryOpen} onOpenChange={setDeliveryOpen}>
             <div className="mb-6">
               <CollapsibleTrigger className="flex items-center justify-between mb-3 w-full">
-                <h3 className="font-semibold">Delivery speed</h3>
+                <h3 className="text-sm lg:text-base font-semibold">Delivery speed</h3>
                 <svg
                   className={`w-4 h-4 transition-transform ${
                     deliveryOpen ? "" : "rotate-180"
@@ -237,7 +264,7 @@ function SearchResultsContent() {
           <Collapsible open={ratingsOpen} onOpenChange={setRatingsOpen}>
             <div className="mb-6">
               <CollapsibleTrigger className="flex items-center justify-between mb-3 w-full">
-                <h3 className="font-semibold">Ratings</h3>
+                <h3 className="text-sm lg:text-base font-semibold">Ratings</h3>
                 <svg
                   className={`w-4 h-4 transition-transform ${
                     ratingsOpen ? "" : "rotate-180"
@@ -297,25 +324,34 @@ function SearchResultsContent() {
               </CollapsibleContent>
             </div>
           </Collapsible>
+
+          {/* Mobile Apply Button */}
+          <button
+            onClick={() => setMobileFiltersOpen(false)}
+            className="lg:hidden w-full py-3 bg-[#23429B] text-white rounded-lg font-medium hover:bg-[#1a3278] transition-colors mt-6 sticky bottom-4"
+          >
+            Apply Filters
+          </button>
+          </div>
         </div>
 
         {/* Right Content - Products Grid */}
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-4 lg:p-6">
           {/* Header Section */}
           <div className="mb-6">
-            <div className="flex items-center gap-2 mb-4">
-              <h2 className="text-3xl font-bold">2,500+</h2>
-              <span className="text-sm text-gray-400">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-2 mb-4">
+              <h2 className="text-2xl lg:text-3xl font-bold">2,500+</h2>
+              <span className="text-xs lg:text-sm text-gray-400">
                 Products for results of "{searchQuery}"
               </span>
             </div>
 
             {/* Filter Tags */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div className="flex flex-wrap gap-2">
                 <Badge
                   variant="outline"
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-50"
+                  className="px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm cursor-pointer hover:bg-gray-50"
                 >
                   <svg
                     className="w-4 h-4 text-red-500 fill-current"
@@ -327,7 +363,7 @@ function SearchResultsContent() {
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-50"
+                  className="px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm cursor-pointer hover:bg-gray-50"
                 >
                   <svg
                     className="w-4 h-4"
@@ -346,7 +382,7 @@ function SearchResultsContent() {
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="px-4 py-2 cursor-pointer hover:bg-gray-50"
+                  className="px-3 lg:px-4 py-1.5 lg:py-2 text-xs lg:text-sm cursor-pointer hover:bg-gray-50"
                 >
                   <svg
                     className="w-4 h-4"
@@ -360,10 +396,10 @@ function SearchResultsContent() {
               </div>
 
               {/* Right Side Controls */}
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-2 lg:gap-4">
                 <Badge
                   variant="outline"
-                  className="px-4 py-2.5 cursor-pointer hover:bg-gray-50 font-medium"
+                  className="px-3 lg:px-4 py-2 lg:py-2.5 text-xs lg:text-sm cursor-pointer hover:bg-gray-50 font-medium"
                 >
                   <div className="w-5 h-5 rounded-full bg-[#203C8D] flex items-center justify-center">
                     <svg
@@ -395,7 +431,7 @@ function SearchResultsContent() {
                 </Badge>
                 <Badge
                   variant="outline"
-                  className="px-4 py-2.5 cursor-pointer hover:bg-gray-50 font-medium"
+                  className="px-3 lg:px-4 py-2 lg:py-2.5 text-xs lg:text-sm cursor-pointer hover:bg-gray-50 font-medium"
                 >
                   Sort by : Recommended
                   <svg
@@ -417,7 +453,7 @@ function SearchResultsContent() {
           </div>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-6">
             {[...Array(16)].map((_, idx) => {
               const product = products[idx % products.length];
               return (
@@ -426,16 +462,16 @@ function SearchResultsContent() {
                   className="overflow-hidden border-0 shadow-none bg-white p-0"
                 >
                   <Link href={`/product/${product.id}`}>
-                    <div className="relative bg-gray-50 rounded-3xl cursor-pointer">
-                      <div className="absolute top-3 left-3 bg-[#C52129] text-white text-xs font-semibold px-3 py-1 rounded-full z-10">
+                    <div className="relative bg-gray-50 rounded-2xl lg:rounded-3xl cursor-pointer">
+                      <div className="absolute top-2 left-2 lg:top-3 lg:left-3 bg-[#C52129] text-white text-[10px] lg:text-xs font-semibold px-2 lg:px-3 py-0.5 lg:py-1 rounded-full z-10">
                         {product.discount}% OFF
                       </div>
                       <button 
-                        className="absolute top-3 right-3 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 z-10"
+                        className="absolute top-2 right-2 lg:top-3 lg:right-3 w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 z-10"
                         onClick={(e) => e.preventDefault()}
                       >
                         <svg
-                          className={`w-5 h-5 ${
+                          className={`w-4 h-4 lg:w-5 lg:h-5 ${
                             product.isWishlisted
                               ? "text-red-500 fill-current"
                               : "text-gray-400"
@@ -445,7 +481,7 @@ function SearchResultsContent() {
                           <path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
                         </svg>
                       </button>
-                      <div className="aspect-square flex items-center justify-center p-6">
+                      <div className="aspect-square flex items-center justify-center p-4 lg:p-6">
                         <Image
                           src={product.image}
                           alt={product.name}
@@ -456,37 +492,37 @@ function SearchResultsContent() {
                       </div>
                     </div>
                   </Link>
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-gray-900 mb-2 text-sm line-clamp-2">
+                  <CardContent className="p-2 lg:p-4">
+                    <h3 className="font-semibold text-gray-900 mb-1 lg:mb-2 text-xs lg:text-sm line-clamp-2">
                       {product.name}
                     </h3>
-                    <div className="flex items-center gap-1 mb-2">
+                    <div className="flex items-center gap-1 mb-1 lg:mb-2">
                       <div className="flex text-yellow-400">
                         {[...Array(5)].map((_, i) => (
                           <svg
                             key={i}
-                            className="w-4 h-4 fill-current"
+                            className="w-3 h-3 lg:w-4 lg:h-4 fill-current"
                             viewBox="0 0 20 20"
                           >
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
                       </div>
-                      <span className="text-xs text-gray-600">
+                      <span className="text-[10px] lg:text-xs text-gray-600">
                         {product.rating} ({product.reviews} sold)
                       </span>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold text-black">
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                        <span className="text-sm lg:text-xl font-bold text-black">
                           RM{product.price.toFixed(2)}
                         </span>
-                        <span className="text-sm text-[#C52129] line-through">
+                        <span className="text-xs lg:text-sm text-[#C52129] line-through">
                           RM{product.originalPrice.toFixed(2)}
                         </span>
                       </div>
-                      <Button variant="outline" size="icon" className="rounded-full w-10 h-10">
-                        <span className="text-lg">+</span>
+                      <Button variant="outline" size="icon" className="rounded-full w-8 h-8 lg:w-10 lg:h-10">
+                        <span className="text-base lg:text-lg">+</span>
                       </Button>
                     </div>
                   </CardContent>
@@ -496,10 +532,10 @@ function SearchResultsContent() {
           </div>
 
           {/* Pagination */}
-          <div className="flex items-center justify-between gap-2 mt-8">
-            <Button className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm hover:bg-gray-50 font-medium">
+          <div className="flex items-center justify-between gap-2 mt-6 lg:mt-8">
+            <Button className="flex items-center gap-1 lg:gap-2 px-3 lg:px-4 py-2 border border-gray-200 rounded-full text-xs lg:text-sm hover:bg-gray-50 font-medium">
               <svg
-                className="w-4 h-4"
+                className="w-3 h-3 lg:w-4 lg:h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -511,27 +547,27 @@ function SearchResultsContent() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Prev
+              <span className="hidden lg:inline">Prev</span>
             </Button>
-            <div className="flex flex-row gap-x-2">
-              <Button className="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-sm hover:bg-gray-50">
+            <div className="flex flex-row gap-x-1 lg:gap-x-2">
+              <Button className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center border border-gray-200 rounded-full text-xs lg:text-sm hover:bg-gray-50">
                 1
               </Button>
-              <Button className="w-10 h-10 flex items-center justify-center rounded-full text-sm font-medium text-white" style={{ background: 'linear-gradient(to bottom, #23429B, #C52129)' }}>
+              <Button className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center rounded-full text-xs lg:text-sm font-medium text-white" style={{ background: 'linear-gradient(to bottom, #23429B, #C52129)' }}>
                 2
               </Button>
-              <Button className="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-sm hover:bg-gray-50">
+              <Button className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center border border-gray-200 rounded-full text-xs lg:text-sm hover:bg-gray-50">
                 3
               </Button>
-              <span className="px-2 text-gray-400">...</span>
-              <Button className="w-10 h-10 flex items-center justify-center border border-gray-200 rounded-full text-sm hover:bg-gray-50">
+              <span className="px-1 lg:px-2 text-gray-400 text-xs lg:text-sm">...</span>
+              <Button className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center border border-gray-200 rounded-full text-xs lg:text-sm hover:bg-gray-50">
                 8
               </Button>
             </div>
-            <Button className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full text-sm hover:bg-gray-50 font-medium">
-              Next
+            <Button className="flex items-center gap-1 lg:gap-2 px-3 lg:px-4 py-2 border border-gray-200 rounded-full text-xs lg:text-sm hover:bg-gray-50 font-medium">
+              <span className="hidden lg:inline">Next</span>
               <svg
-                className="w-4 h-4"
+                className="w-3 h-3 lg:w-4 lg:h-4"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

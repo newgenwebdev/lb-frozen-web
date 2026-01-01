@@ -7,9 +7,9 @@ import ProfileSidebar from "@/components/layout/ProfileSidebar";
 
 export default function HelpSupportPage() {
   return (
-    <div className="mx-auto px-6 py-8">
+    <div className="mx-auto px-4 sm:px-6 py-4 sm:py-8">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-gray-600 mb-8">
+      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 mb-4 sm:mb-8">
         <Link href="/landing" className="hover:text-gray-900">
           Home
         </Link>
@@ -18,7 +18,7 @@ export default function HelpSupportPage() {
       </div>
 
       {/* Main Layout */}
-      <div className="flex gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
         {/* Left Sidebar */}
         <ProfileSidebar activeMenu="Help and Support" />
 

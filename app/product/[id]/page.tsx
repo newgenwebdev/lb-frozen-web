@@ -59,17 +59,17 @@ export default function ProductDetailPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8">
-      <div className="grid grid-cols-2 gap-12">
+    <div className="max-w-7xl mx-auto px-4 lg:px-6 py-4 lg:py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12">
           {/* Left - Image Gallery */}
           <div className="space-y-4">
-            <div className="relative bg-gray-50 rounded-3xl aspect-square flex items-center justify-center p-12">
-              <Badge className="absolute top-4 left-4 bg-[#C52129] text-white hover:bg-[#C52129]">
+            <div className="relative bg-gray-50 rounded-2xl lg:rounded-3xl aspect-square flex items-center justify-center p-6 lg:p-12">
+              <Badge className="absolute top-2 left-2 lg:top-4 lg:left-4 bg-[#C52129] text-white hover:bg-[#C52129] text-xs">
                 {product.discount}% OFF
               </Badge>
-              <button className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
+              <button className="absolute top-2 right-2 lg:top-4 lg:right-4 w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
                 <svg
-                  className="w-5 h-5 text-gray-400"
+                  className="w-4 h-4 lg:w-5 lg:h-5 text-gray-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -82,9 +82,9 @@ export default function ProductDetailPage() {
                   />
                 </svg>
               </button>
-              <button className="absolute top-4 right-16 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
+              <button className="absolute top-2 right-12 lg:top-4 lg:right-16 w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
                 <svg
-                  className="w-5 h-5 text-gray-600"
+                  className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -97,9 +97,9 @@ export default function ProductDetailPage() {
                   />
                 </svg>
               </button>
-              <button className="absolute bottom-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
+              <button className="absolute bottom-2 right-2 lg:bottom-4 lg:right-4 w-8 h-8 lg:w-10 lg:h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100">
                 <svg
-                  className="w-5 h-5 text-gray-600"
+                  className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -122,11 +122,11 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Tabs Section */}
-            <div className="mt-6 border border-gray-200 rounded-3xl">
+            <div className="mt-4 lg:mt-6 border border-gray-200 rounded-2xl lg:rounded-3xl">
               <div className="flex justify-evenly border-b border-gray-200">
                 <button
                   onClick={() => setActiveTab("about")}
-                  className={`py-4 px-2 font-medium border-b-2 transition-colors ${
+                  className={`py-3 lg:py-4 px-2 text-sm lg:text-base font-medium border-b-2 transition-colors ${
                     activeTab === "about"
                       ? "border-gray-900 text-gray-900"
                       : "border-transparent text-gray-500 hover:text-gray-900"
@@ -146,45 +146,45 @@ export default function ProductDetailPage() {
                 </button>
               </div>
 
-              <div className="py-8 px-8">
+              <div className="py-4 px-4 lg:py-8 lg:px-8">
                 {activeTab === "about" && (
                   <div>
-                    <h3 className="text-xl font-semibold mb-4">
+                    <h3 className="text-lg lg:text-xl font-semibold mb-3 lg:mb-4">
                       About this product
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-sm lg:text-base text-gray-600 leading-relaxed">
                       {product.description}
                     </p>
                   </div>
                 )}
                 {activeTab === "reviews" && (
-                  <div className="space-y-8">
+                  <div className="space-y-6 lg:space-y-8">
                     {/* Reviews Overview */}
                     <div>
-                      <h3 className="text-xl font-semibold mb-6">
+                      <h3 className="text-lg lg:text-xl font-semibold mb-4 lg:mb-6">
                         Reviews overview
                       </h3>
-                      <div className="flex gap-12">
+                      <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
                         {/* Rating Summary */}
-                        <div className="flex flex-col items-center justify-center min-w-200px">
-                          <div className="w-16 h-16 bg-yellow-400 rounded-xl flex items-center justify-center mb-3">
+                        <div className="flex flex-col items-center justify-center">
+                          <div className="w-12 h-12 lg:w-16 lg:h-16 bg-yellow-400 rounded-xl flex items-center justify-center mb-2 lg:mb-3">
                             <svg
-                              className="w-10 h-10 text-white fill-current"
+                              className="w-8 h-8 lg:w-10 lg:h-10 text-white fill-current"
                               viewBox="0 0 20 20"
                             >
                               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
                           </div>
-                          <div className="text-3xl font-bold text-gray-900">
+                          <div className="text-2xl lg:text-3xl font-bold text-gray-900">
                             4.5 of 5.0
                           </div>
-                          <div className="text-sm text-gray-600 mt-1">
+                          <div className="text-xs lg:text-sm text-gray-600 mt-1">
                             1,405 ratings • 2,404 reviews
                           </div>
                         </div>
 
                         {/* Rating Bars */}
-                        <div className="flex-1 space-y-2">
+                        <div className="flex-1 space-y-1.5 lg:space-y-2">
                           {[
                             { stars: 5, count: 843, width: "85%" },
                             { stars: 4, count: 351, width: "55%" },
@@ -216,10 +216,10 @@ export default function ProductDetailPage() {
 
                     {/* All Reviews */}
                     <div>
-                      <div className="flex items-center justify-between mb-6">
-                        <h3 className="text-xl font-semibold">All reviews</h3>
-                        <div className="flex gap-4">
-                          <select className="px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:gap-0 mb-4 lg:mb-6">
+                        <h3 className="text-lg lg:text-xl font-semibold">All reviews</h3>
+                        <div className="flex gap-2 lg:gap-4 overflow-x-auto">
+                          <select className="px-3 lg:px-4 py-2 border border-gray-200 rounded-lg text-xs lg:text-sm">
                             <option>Rating star</option>
                             <option>5 stars</option>
                             <option>4 stars</option>
@@ -227,7 +227,7 @@ export default function ProductDetailPage() {
                             <option>2 stars</option>
                             <option>1 star</option>
                           </select>
-                          <select className="px-4 py-2 border border-gray-200 rounded-lg text-sm">
+                          <select className="px-3 lg:px-4 py-2 border border-gray-200 rounded-lg text-xs lg:text-sm">
                             <option>Sort by : recently</option>
                             <option>Most helpful</option>
                             <option>Highest rating</option>
@@ -237,11 +237,11 @@ export default function ProductDetailPage() {
                       </div>
 
                       {/* Review Items */}
-                      <div className="space-y-6">
+                      <div className="space-y-4 lg:space-y-6">
                         {/* Review 1 */}
-                        <div className="flex gap-4 pb-6 border-b border-gray-100">
-                          <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center shrink-0">
-                            <span className="text-sm font-semibold text-gray-600">
+                        <div className="flex gap-3 lg:gap-4 pb-4 lg:pb-6 border-b border-gray-100">
+                          <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-100 rounded-full flex items-center justify-center shrink-0">
+                            <span className="text-xs lg:text-sm font-semibold text-gray-600">
                               RK
                             </span>
                           </div>
@@ -268,7 +268,7 @@ export default function ProductDetailPage() {
                                   </span>
                                 </div>
                               </div>
-                              <div className="flex items-center gap-3 text-sm text-gray-600">
+                              <div className="flex items-center gap-2 lg:gap-3 text-xs lg:text-sm text-gray-600">
                                 <span className="flex items-center gap-1">
                                   <span className="w-2 h-2 bg-gray-300 rounded-full"></span>
                                   256 GB
@@ -279,15 +279,15 @@ export default function ProductDetailPage() {
                                 </span>
                               </div>
                             </div>
-                            <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                            <p className="text-xs lg:text-sm text-gray-700 leading-relaxed mb-2 lg:mb-3">
                               "These crabs are the freshest I've ever tasted!
                               The meat is so sweet and succulent, and they were
                               cooked perfectly. My family devoured them in
                               minutes. Will definitely be ordering again for our
                               next seafood night!"
                             </p>
-                            <div className="flex gap-2 mb-3">
-                              <div className="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden">
+                            <div className="flex gap-2 mb-2 lg:mb-3">
+                              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gray-100 rounded-lg overflow-hidden">
                                 <Image
                                   src="/crab.png"
                                   alt="Review photo"
@@ -296,18 +296,18 @@ export default function ProductDetailPage() {
                                   className="object-cover"
                                 />
                               </div>
-                              <div className="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden">
+                              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gray-100 rounded-lg overflow-hidden">
                                 <Image
-                                  src="/crab.png"
+                                  src="/product-image.jpg"
                                   alt="Review photo"
                                   width={64}
                                   height={64}
                                   className="object-cover"
                                 />
                               </div>
-                              <div className="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden">
+                              <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gray-100 rounded-lg overflow-hidden">
                                 <Image
-                                  src="/crab.png"
+                                  src="/product-image.jpg"
                                   alt="Review photo"
                                   width={64}
                                   height={64}
@@ -315,10 +315,10 @@ export default function ProductDetailPage() {
                                 />
                               </div>
                             </div>
-                            <div className="flex items-center gap-4 text-sm text-gray-600">
+                            <div className="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm text-gray-600">
                               <div className="flex items-center gap-1">
                                 <svg
-                                  className="w-4 h-4"
+                                  className="w-3 h-3 lg:w-4 lg:h-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -334,7 +334,7 @@ export default function ProductDetailPage() {
                               </div>
                               <div className="flex items-center gap-1">
                                 <svg
-                                  className="w-4 h-4"
+                                  className="w-3 h-3 lg:w-4 lg:h-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -349,13 +349,13 @@ export default function ProductDetailPage() {
                                 Verified buyer
                               </div>
                             </div>
-                            <div className="flex items-center gap-4 mt-3 pt-3 border-t border-gray-100">
-                              <span className="text-sm text-gray-600">
+                            <div className="flex items-center gap-3 lg:gap-4 mt-2 lg:mt-3 pt-2 lg:pt-3 border-t border-gray-100">
+                              <span className="text-xs lg:text-sm text-gray-600">
                                 Is this helpful?
                               </span>
-                              <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900">
+                              <button className="flex items-center gap-1 text-xs lg:text-sm text-gray-600 hover:text-gray-900">
                                 <svg
-                                  className="w-4 h-4"
+                                  className="w-3 h-3 lg:w-4 lg:h-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -369,9 +369,9 @@ export default function ProductDetailPage() {
                                 </svg>
                                 42
                               </button>
-                              <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900">
+                              <button className="flex items-center gap-1 text-xs lg:text-sm text-gray-600 hover:text-gray-900">
                                 <svg
-                                  className="w-4 h-4"
+                                  className="w-3 h-3 lg:w-4 lg:h-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -401,9 +401,9 @@ export default function ProductDetailPage() {
                             />
                           </div>
                           <div className="flex-1">
-                            <div className="flex items-start justify-between mb-2">
+                            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 mb-2">
                               <div>
-                                <div className="font-semibold text-gray-900">
+                                <div className="text-sm lg:text-base font-semibold text-gray-900">
                                   Ali Zandar
                                 </div>
                                 <div className="flex items-center gap-2 mt-1">
@@ -411,19 +411,19 @@ export default function ProductDetailPage() {
                                     {[...Array(5)].map((_, i) => (
                                       <svg
                                         key={i}
-                                        className="w-4 h-4 fill-current"
+                                        className="w-3 h-3 lg:w-4 lg:h-4 fill-current"
                                         viewBox="0 0 20 20"
                                       >
                                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                       </svg>
                                     ))}
                                   </div>
-                                  <span className="text-sm text-gray-900 font-semibold">
+                                  <span className="text-xs lg:text-sm text-gray-900 font-semibold">
                                     4.6
                                   </span>
                                 </div>
                               </div>
-                              <div className="flex items-center gap-3 text-sm text-gray-600">
+                              <div className="flex items-center gap-2 lg:gap-3 text-xs lg:text-sm text-gray-600">
                                 <span className="flex items-center gap-1">
                                   <span className="w-2 h-2 bg-gray-300 rounded-full"></span>
                                   256 GB
@@ -434,17 +434,17 @@ export default function ProductDetailPage() {
                                 </span>
                               </div>
                             </div>
-                            <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                            <p className="text-xs lg:text-sm text-gray-700 leading-relaxed mb-2 lg:mb-3">
                               "The crabs were incredibly fresh and delicious.
                               They arrived well-packaged and on time. The
                               quality was outstanding, and the taste was
                               amazing. I highly recommend these crabs to anyone
                               looking for a top-notch seafood experience."
                             </p>
-                            <div className="flex items-center gap-4 text-sm text-gray-600">
+                            <div className="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm text-gray-600">
                               <div className="flex items-center gap-1">
                                 <svg
-                                  className="w-4 h-4"
+                                  className="w-3 h-3 lg:w-4 lg:h-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -460,7 +460,7 @@ export default function ProductDetailPage() {
                               </div>
                               <div className="flex items-center gap-1">
                                 <svg
-                                  className="w-4 h-4"
+                                  className="w-3 h-3 lg:w-4 lg:h-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -475,13 +475,13 @@ export default function ProductDetailPage() {
                                 Verified buyer
                               </div>
                             </div>
-                            <div className="flex items-center gap-4 mt-3 pt-3 border-t border-gray-100">
-                              <span className="text-sm text-gray-600">
+                            <div className="flex items-center gap-3 lg:gap-4 mt-2 lg:mt-3 pt-2 lg:pt-3 border-t border-gray-100">
+                              <span className="text-xs lg:text-sm text-gray-600">
                                 Is this helpful?
                               </span>
-                              <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900">
+                              <button className="flex items-center gap-1 text-xs lg:text-sm text-gray-600 hover:text-gray-900">
                                 <svg
-                                  className="w-4 h-4"
+                                  className="w-3 h-3 lg:w-4 lg:h-4"
                                   fill="none"
                                   stroke="currentColor"
                                   viewBox="0 0 24 24"
@@ -541,14 +541,14 @@ export default function ProductDetailPage() {
           </div>
 
           {/* Right - Product Info */}
-          <div className="space-y-6">
+          <div className="space-y-4 lg:space-y-6">
             {/* Delivery Badge */}
+            <div className="flex flex-wrap items-center gap-2">
             <Badge
               variant="outline"
-              className="bg-[#C52129] text-white border-0 hover:bg-[#C52129]"
-            >
+              className="bg-[#C52129] text-white border-0 hover:bg-[#C52129] text-xs">
               <svg
-                className="w-4 h-4 mr-1"
+                className="w-3 h-3 lg:w-4 lg:h-4 mr-1"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -557,21 +557,22 @@ export default function ProductDetailPage() {
               </svg>
               On Sale
             </Badge>
-            <span className="text-sm text-gray-600 ml-2">
+            <span className="text-xs lg:text-sm text-gray-600">
               No-2 on Today Deals
             </span>
+            </div>
 
             {/* Product Title */}
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-xl lg:text-3xl font-bold text-gray-900">
               {product.name}
             </h1>
 
             {/* Price */}
-            <div className="flex items-center gap-3">
-              <span className="text-3xl font-bold text-gray-900">
+            <div className="flex items-center gap-2 lg:gap-3">
+              <span className="text-2xl lg:text-3xl font-bold text-gray-900">
                 RM{product.price.toFixed(2)}
               </span>
-              <span className="text-lg text-[#C52129] line-through">
+              <span className="text-base lg:text-lg text-[#C52129] line-through">
                 RM{product.originalPrice.toFixed(2)}
               </span>
             </div>
@@ -582,7 +583,7 @@ export default function ProductDetailPage() {
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
-                    className="w-5 h-5 fill-current"
+                    className="w-4 h-4 lg:w-5 lg:h-5 fill-current"
                     viewBox="0 0 20 20"
                   >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -596,21 +597,21 @@ export default function ProductDetailPage() {
 
             {/* Weight Options */}
             <div className="space-y-2">
-              <label className="text-sm font-semibold text-gray-900">
+              <label className="text-xs lg:text-sm font-semibold text-gray-900">
                 Weight
               </label>
-              <div className="flex gap-3">
+              <div className="flex gap-2 lg:gap-3">
                 {product.weights.map((weight) => (
                   <button
                     key={weight.value}
                     onClick={() => setSelectedWeight(weight.value)}
-                    className={`px-6 py-3 rounded-lg border-2 transition-colors ${
+                    className={`px-4 lg:px-6 py-2 lg:py-3 rounded-lg border-2 transition-colors text-xs lg:text-sm ${
                       selectedWeight === weight.value
                         ? "border-gray-900 bg-gray-50"
                         : "border-gray-200 hover:border-gray-300"
                     }`}
                   >
-                    <span className="text-sm font-medium">{weight.label}</span>
+                    <span className="font-medium">{weight.label}</span>
                   </button>
                 ))}
               </div>
@@ -618,61 +619,61 @@ export default function ProductDetailPage() {
 
             {/* Quantity & Stock */}
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 lg:gap-4">
                 <button
                   onClick={decrementQuantity}
-                  className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+                  className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 text-base lg:text-lg"
                 >
                   −
                 </button>
-                <span className="text-lg font-semibold w-12 text-center">
+                <span className="text-base lg:text-lg font-semibold w-10 lg:w-12 text-center">
                   {quantity}
                 </span>
                 <button
                   onClick={incrementQuantity}
-                  className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50"
+                  className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 text-base lg:text-lg"
                 >
                   +
                 </button>
               </div>
-              <span className="text-sm text-gray-600">
+              <span className="text-xs lg:text-sm text-gray-600">
                 {product.stock} items in stock
               </span>
             </div>
 
             {/* Action Buttons */}
-            <div className="space-y-3">
+            <div className="space-y-2 lg:space-y-3">
               <Button
-                className="w-full py-6 text-lg"
+                className="w-full py-4 lg:py-6 text-base lg:text-lg"
                 style={{
                   background: "linear-gradient(to right, #23429B, #C52129)",
                 }}
               >
                 Buy it now
               </Button>
-              <Button variant="outline" className="w-full py-6 text-lg">
+              <Button variant="outline" className="w-full py-4 lg:py-6 text-base lg:text-lg">
                 Add to cart
               </Button>
             </div>
 
             {/* Product Insights */}
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t">
-              <div className="flex items-start gap-3">
+            <div className="grid grid-cols-2 gap-3 lg:gap-4 pt-3 lg:pt-4 border-t">
+              <div className="flex items-start gap-2 lg:gap-3">
                 <svg
-                  className="w-5 h-5 text-gray-600 mt-1"
+                  className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600 mt-1"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
                 <div>
-                  <div className="text-sm font-semibold text-gray-900">
+                  <div className="text-xs lg:text-sm font-semibold text-gray-900">
                     Popular choice
                   </div>
-                  <div className="text-2xl font-bold text-gray-900">
+                  <div className="text-xl lg:text-2xl font-bold text-gray-900">
                     {product.insights.popularChoice.count}
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-[10px] lg:text-xs text-gray-600">
                     {product.insights.popularChoice.description}
                   </div>
                 </div>
@@ -700,10 +701,10 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Shipping Info */}
-            <div className="space-y-3 pt-4 border-t">
-              <div className="flex items-start gap-3">
+            <div className="space-y-3 pt-3 lg:pt-4 border-t">
+              <div className="flex items-start gap-2 lg:gap-3">
                 <svg
-                  className="w-5 h-5 text-gray-600 mt-0.5"
+                  className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -716,10 +717,10 @@ export default function ProductDetailPage() {
                   />
                 </svg>
                 <div className="flex-1">
-                  <div className="font-semibold text-sm text-gray-900 mb-1">
+                  <div className="font-semibold text-xs lg:text-sm text-gray-900 mb-1">
                     Shipping & Delivery
                   </div>
-                  <div className="text-sm text-gray-600 space-y-1">
+                  <div className="text-xs lg:text-sm text-gray-600 space-y-1">
                     <div>{product.shippingInfo.delivery}</div>
                     <div>{product.shippingInfo.arrivalDate}</div>
                     <div>{product.shippingInfo.confirmation}</div>
@@ -727,9 +728,9 @@ export default function ProductDetailPage() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2 lg:gap-3">
                 <svg
-                  className="w-5 h-5 text-gray-600 mt-0.5"
+                  className="w-4 h-4 lg:w-5 lg:h-5 text-gray-600 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -742,11 +743,11 @@ export default function ProductDetailPage() {
                   />
                 </svg>
                 <div className="flex-1">
-                  <div className="font-semibold text-sm text-gray-900 mb-2">
+                  <div className="font-semibold text-xs lg:text-sm text-gray-900 mb-2">
                     Payment options
                   </div>
                   <div className="flex gap-2">
-                    <div className="w-12 h-8 bg-white border border-gray-200 rounded flex items-center justify-center">
+                    <div className="w-10 h-7 lg:w-12 lg:h-8 bg-white border border-gray-200 rounded flex items-center justify-center">
                       <svg
                         className="h-4"
                         viewBox="0 0 48 32"

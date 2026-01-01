@@ -58,7 +58,7 @@ export default function CheckoutPage() {
   return (
     <div className="relative">
       {/* Content */}
-      <div className="relative mx-auto pt-8">
+      <div className="relative mx-auto pt-4 lg:pt-8 px-4 lg:px-0">
         {/* Progress Steps */}
         <CheckoutStepper currentStep="shipping" />
 
@@ -66,14 +66,14 @@ export default function CheckoutPage() {
         <div className="border-t border-gray-200"></div>
 
         {/* Main content grid with borders */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 pr-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 lg:pr-6">
           {/* Left Column - Checkout Details */}
-          <div className="lg:col-span-2 lg:border-r border-gray-200 pt-8 px-10">
+          <div className="lg:col-span-2 lg:border-r border-gray-200 pt-4 lg:pt-8 lg:px-10">
             {/* Shipping/Pickup Toggle */}
-            <div className="flex gap-4 mb-8">
+            <div className="flex gap-3 lg:gap-4 mb-6 lg:mb-8">
               <button
                 onClick={() => setShippingMethod("shipping")}
-                className={`flex-1 py-4 px-6 rounded-xl border transition-colors ${
+                className={`flex-1 py-3 lg:py-4 px-4 lg:px-6 rounded-xl border transition-colors ${
                   shippingMethod === "shipping"
                     ? "border-gray-900 bg-gray-50"
                     : "border-gray-200 bg-white hover:border-gray-300"
@@ -81,7 +81,7 @@ export default function CheckoutPage() {
               >
                 <div className="flex items-center justify-center gap-2">
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4 lg:w-5 lg:h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -93,12 +93,12 @@ export default function CheckoutPage() {
                       d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
                     />
                   </svg>
-                  <span className="font-medium">Shipping</span>
+                  <span className="font-medium text-sm lg:text-base">Shipping</span>
                 </div>
               </button>
               <button
                 onClick={() => setShippingMethod("pickup")}
-                className={`flex-1 py-4 px-6 rounded-xl border transition-colors ${
+                className={`flex-1 py-3 lg:py-4 px-4 lg:px-6 rounded-xl border transition-colors ${
                   shippingMethod === "pickup"
                     ? "border-gray-900 bg-gray-50"
                     : "border-gray-200 bg-white hover:border-gray-300"
@@ -106,7 +106,7 @@ export default function CheckoutPage() {
               >
                 <div className="flex items-center justify-center gap-2">
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4 lg:w-5 lg:h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -118,17 +118,17 @@ export default function CheckoutPage() {
                       d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                     />
                   </svg>
-                  <span className="font-medium">Pickup</span>
+                  <span className="font-medium text-sm lg:text-base">Pickup</span>
                 </div>
               </button>
             </div>
 
             {/* Shipping Type */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">
+            <div className="mb-6 lg:mb-8">
+              <h2 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4">
                 Shipping type
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-4">
                 {/* Standard Shipping */}
                 <button
                   onClick={() => setSelectedShipping("standard")}
@@ -153,15 +153,15 @@ export default function CheckoutPage() {
                       />
                     </svg>
                     <div className="flex-1">
-                      <div className="font-semibold text-gray-900 mb-1">
+                      <div className="font-semibold text-gray-900 mb-1 text-sm lg:text-base">
                         Standard Shipping
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-xs lg:text-sm text-gray-600">
                         5-7 business days
                       </div>
                     </div>
                   </div>
-                  <div className="text-lg font-bold text-gray-900">
+                  <div className="text-base lg:text-lg font-bold text-gray-900">
                     RM0.00 (Free)
                   </div>
                 </button>
@@ -190,15 +190,15 @@ export default function CheckoutPage() {
                       />
                     </svg>
                     <div className="flex-1">
-                      <div className="font-semibold text-gray-900 mb-1">
+                      <div className="font-semibold text-gray-900 mb-1 text-sm lg:text-base">
                         Express Shipping
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-xs lg:text-sm text-gray-600">
                         1-3 business days
                       </div>
                     </div>
                   </div>
-                  <div className="text-lg font-bold text-gray-900">+RM5.99</div>
+                  <div className="text-base lg:text-lg font-bold text-gray-900">+RM5.99</div>
                 </button>
 
                 {/* Same-Day Delivery */}
@@ -225,15 +225,15 @@ export default function CheckoutPage() {
                       />
                     </svg>
                     <div className="flex-1">
-                      <div className="font-semibold text-gray-900 mb-1">
+                      <div className="font-semibold text-gray-900 mb-1 text-sm lg:text-base">
                         Same-Day Delivery
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-xs lg:text-sm text-gray-600">
                         orders before 12:00 pm
                       </div>
                     </div>
                   </div>
-                  <div className="text-lg font-bold text-gray-900">
+                  <div className="text-base lg:text-lg font-bold text-gray-900">
                     +RM12.99
                   </div>
                 </button>
@@ -241,20 +241,20 @@ export default function CheckoutPage() {
             </div>
 
             {/* Shipping Address */}
-            <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gray-900">
+            <div className="mb-6 lg:mb-8">
+              <div className="flex items-center justify-between mb-3 lg:mb-4">
+                <h2 className="text-lg lg:text-xl font-bold text-gray-900">
                   Select shipping address
                 </h2>
                 <AddAddressDialog />
               </div>
 
               {/* Default Address */}
-              <div className="border border-blue-600 rounded-xl p-6 mb-4 bg-blue-50">
-                <div className="flex items-start justify-between mb-4">
+              <div className="border border-blue-600 rounded-xl p-4 lg:p-6 mb-3 lg:mb-4 bg-blue-50">
+                <div className="flex items-start justify-between mb-3 lg:mb-4">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-bold text-gray-900">
+                      <span className="font-bold text-gray-900 text-sm lg:text-base">
                         Hana Syafitri
                       </span>
                       <span className="text-xs bg-blue-600 text-white px-2 py-0.5 rounded">
@@ -302,10 +302,10 @@ export default function CheckoutPage() {
               </div>
 
               {/* Office Address */}
-              <div className="border border-gray-200 rounded-xl p-6">
-                <div className="flex items-start justify-between mb-4">
+              <div className="border border-gray-200 rounded-xl p-4 lg:p-6">
+                <div className="flex items-start justify-between mb-3 lg:mb-4">
                   <div>
-                    <div className="font-bold text-gray-900 mb-2">
+                    <div className="font-bold text-gray-900 mb-2 text-sm lg:text-base">
                       Office Address
                     </div>
                   </div>
@@ -323,10 +323,10 @@ export default function CheckoutPage() {
                         d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
                       />
                     </svg>
-                    <span className="text-sm">Edit</span>
+                    <span className="text-xs lg:text-sm">Edit</span>
                   </button>
                 </div>
-                <div className="text-gray-700 mb-3">
+                <div className="text-gray-700 mb-3 text-sm lg:text-base">
                   <div>45 Jalan Titiwangsa, Titiwangsa, 53200 Kuala</div>
                   <div>Lumpur, Malaysia</div>
                 </div>
@@ -351,7 +351,7 @@ export default function CheckoutPage() {
           </div>
 
           {/* Right Column - Order Summary */}
-          <div className="lg:col-span-1 pt-8">
+          <div className="lg:col-span-1 pt-4 lg:pt-8">
             <OrderSummary
               subtotal={subtotal}
               savings={savings}
