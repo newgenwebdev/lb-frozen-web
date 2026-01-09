@@ -78,7 +78,7 @@ export default function ProductCard({ product, onAddToCart, onClick, showDiscoun
         </div>
       </div>
       <div className="p-4">
-        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 min-h-[3rem]">
+        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 min-h-12">
           {product.title}
         </h3>
         {(rating || soldCount) && (

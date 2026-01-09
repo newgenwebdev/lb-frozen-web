@@ -1094,7 +1094,7 @@ export default function AddProductPage(): React.JSX.Element {
                       onChange={(e) => setOnSale(e.target.checked)}
                       className="peer sr-only"
                     />
-                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#030712] peer-checked:after:translate-x-5"></div>
+                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#030712] peer-checked:after:translate-x-5"></div>
                   </label>
                   <span className="font-geist text-[14px] text-[#6A7282]">
                     Show &quot;On Sale&quot; badge
@@ -1115,7 +1115,7 @@ export default function AddProductPage(): React.JSX.Element {
                       onChange={(e) => setFlashSale(e.target.checked)}
                       className="peer sr-only"
                     />
-                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#C52129] peer-checked:after:translate-x-5"></div>
+                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#C52129] peer-checked:after:translate-x-5"></div>
                   </label>
                   <span className="font-geist text-[14px] text-[#6A7282]">
                     Show in Flash Sale section
@@ -1136,7 +1136,7 @@ export default function AddProductPage(): React.JSX.Element {
                       onChange={(e) => setTrending(e.target.checked)}
                       className="peer sr-only"
                     />
-                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#F59E0B] peer-checked:after:translate-x-5"></div>
+                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#F59E0B] peer-checked:after:translate-x-5"></div>
                   </label>
                   <span className="font-geist text-[14px] text-[#6A7282]">
                     Show &quot;Trending&quot; badge
@@ -1157,7 +1157,7 @@ export default function AddProductPage(): React.JSX.Element {
                       onChange={(e) => setOnBrand(e.target.checked)}
                       className="peer sr-only"
                     />
-                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#23429B] peer-checked:after:translate-x-5"></div>
+                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#23429B] peer-checked:after:translate-x-5"></div>
                   </label>
                   <span className="font-geist text-[14px] text-[#6A7282]">
                     Show &quot;On Brand&quot; badge
@@ -1217,7 +1217,7 @@ export default function AddProductPage(): React.JSX.Element {
                       onChange={(e) => setFreeShipping(e.target.checked)}
                       className="peer sr-only"
                     />
-                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#030712] peer-checked:after:translate-x-5"></div>
+                    <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#030712] peer-checked:after:translate-x-5"></div>
                   </label>
                   <span className="font-geist text-[14px] text-[#6A7282]">
                     Free worldwide delivery
@@ -1555,7 +1555,7 @@ export default function AddProductPage(): React.JSX.Element {
                     onChange={(e) => setGlobalDiscountEnabled(e.target.checked)}
                     className="peer sr-only"
                   />
-                  <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#030712] peer-checked:after:translate-x-5"></div>
+                  <div className="h-6 w-11 rounded-full bg-[#E5E7EB] transition-colors after:absolute after:left-0.5 after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:shadow-sm after:transition-transform peer-checked:bg-[#030712] peer-checked:after:translate-x-5"></div>
                 </label>
                 <span className="font-geist text-[14px] font-medium tracking-[-0.14px] text-[#030712]">
                   Set Discount

@@ -655,9 +655,9 @@ export default function AdminLayout({
           {/* Sidebar */}
           <aside
             className={`flex flex-col bg-white lg:bg-[#F5F5F5] transition-all duration-300 z-50
-        ${isSidebarCollapsed ? "lg:w-16" : "lg:w-[216px]"}
+        ${isSidebarCollapsed ? "lg:w-16" : "lg:w-54"}
         lg:sticky lg:top-0 lg:h-screen lg:pt-8
-        max-lg:fixed max-lg:inset-0 max-lg:w-[280px] max-lg:h-full max-lg:pt-4
+        max-lg:fixed max-lg:inset-0 max-lg:w-70 max-lg:h-full max-lg:pt-4
         ${
           isSidebarCollapsed
             ? "max-lg:-translate-x-full"

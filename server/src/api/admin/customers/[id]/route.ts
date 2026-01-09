@@ -40,7 +40,7 @@ export const DELETE = withAdminAuth(async (
       logger.info(`[ADMIN] Deleted auth identity ${authIdentity.id} for customer ${id}`)
     }
   } catch (error) {
-    logger.warn(`[ADMIN] Failed to delete auth identities for customer ${id}:`, error)
+    logger.warn(`[ADMIN] Failed to delete auth identities for customer ${id}: ${error}`)
     // Continue with customer deletion even if auth identity deletion fails
   }
 

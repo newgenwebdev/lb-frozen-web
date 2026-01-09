@@ -116,9 +116,7 @@ class CustomerRolesService {
         relations: ["groups"],
       })
 
-      this.logger.info(`[CUSTOMER-ROLES] Customer ${customerId} groups:`, 
-        JSON.stringify(customer.groups?.map((g: any) => ({ id: g.id, name: g.name })) || [])
-      )
+      this.logger.info(`[CUSTOMER-ROLES] Customer ${customerId} groups: ${JSON.stringify(customer.groups?.map((g: any) => ({ id: g.id, name: g.name })) || [])}`)
 
       if (!customer.groups || customer.groups.length === 0) {
         // Check metadata for role as fallback

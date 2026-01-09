@@ -11,7 +11,7 @@ export default function OrderDetailPage() {
   if (loading) {
     return (
       <div className="mx-auto px-4 sm:px-6 py-4 sm:py-8">
-        <div className="flex items-center justify-center min-h-[400px]">
+        <div className="flex items-center justify-center min-h-100">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#23429B] mx-auto mb-4"></div>
             <p className="text-gray-600">Loading orders...</p>

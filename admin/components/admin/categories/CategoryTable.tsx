@@ -442,7 +442,7 @@ export function CategoryTable({
           </button>
 
           {isPerPageOpen && (
-            <div className="absolute bottom-full right-0 mb-1 w-[140px] rounded-lg border border-[#E5E7EB] bg-white py-1 shadow-lg">
+            <div className="absolute bottom-full right-0 mb-1 w-35 rounded-lg border border-[#E5E7EB] bg-white py-1 shadow-lg">
               {perPageOptions.map((option) => (
                 <button
                   key={option}
@@ -468,7 +468,7 @@ export function CategoryTable({
       {openMenuId && menuPosition && typeof document !== "undefined" && createPortal(
         <div
           ref={menuRef}
-          className="fixed w-[140px] rounded-lg border border-[#E5E7EB] bg-white py-1 shadow-lg z-9999"
+          className="fixed w-35 rounded-lg border border-[#E5E7EB] bg-white py-1 shadow-lg z-9999"
           style={{
             top: menuPosition.openUp ? "auto" : menuPosition.top,
             bottom: menuPosition.openUp ? `${window.innerHeight - menuPosition.top + 4}px` : "auto",

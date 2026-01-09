@@ -47,6 +47,7 @@ export const POST = async (
           filename: file.name,
           mimeType: getMimeType(file.name),
           content: file.content,
+          access: "public" as const,
         })),
       },
     })

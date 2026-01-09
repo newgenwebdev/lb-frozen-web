@@ -339,7 +339,7 @@ export default function ProfilePage() {
                       className="h-12"
                     />
                     <Select value={dobMonth} onValueChange={setDobMonth}>
-                      <SelectTrigger className="w-full !h-12">
+                      <SelectTrigger className="w-full h-12!">
                         <SelectValue placeholder="Month" />
                       </SelectTrigger>
                       <SelectContent>
@@ -455,7 +455,7 @@ export default function ProfilePage() {
                   <div className="flex justify-center lg:justify-start">
                     {/* Debug: show profileImage value */}
                     {process.env.NODE_ENV === 'development' && (
-                      <div className="absolute top-0 left-0 text-xs bg-black text-white p-1 max-w-[200px] truncate z-50">
+                      <div className="absolute top-0 left-0 text-xs bg-black text-white p-1 max-w-50 truncate z-50">
                         IMG: {profileImage || 'empty'}
                       </div>
                     )}
@@ -478,7 +478,7 @@ export default function ProfilePage() {
                             onLoad={() => console.log('[PROFILE] Image loaded successfully')}
                           />
                         ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-4xl font-bold">
+                          <div className="w-full h-full bg-linear-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white text-4xl font-bold">
                             {fullName ? fullName.charAt(0).toUpperCase() : "?"}
                           </div>
                         )}

@@ -41,6 +41,7 @@ export interface ProductVariant {
   prices: ProductPrice[];
   options?: ProductVariantOption[];
   product_id: string;
+  product?: Product;
   metadata?: Record<string, any>;
   calculated_price?: {
     calculated_amount: number;
@@ -223,6 +224,10 @@ export interface Order {
   fulfillment_status: 'not_fulfilled' | 'partially_fulfilled' | 'fulfilled' | 'returned' | 'canceled';
   shipping_address?: Address;
   billing_address?: Address;
+  payment_collection?: {
+    id: string;
+    payment_sessions?: PaymentSession[];
+  };
   metadata?: Record<string, any>;
   created_at: string;
   updated_at: string;

@@ -63,7 +63,8 @@ export const PUT = withAdminAuth(async (
       )
       
       if (providerIdentity) {
-        await authModuleService.updateProviderIdentities(providerIdentity.id, {
+        await authModuleService.updateProviderIdentities({
+          id: providerIdentity.id,
           provider_metadata: {
             password: passwordHashBase64,
           },

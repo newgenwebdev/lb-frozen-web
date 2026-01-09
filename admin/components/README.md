@@ -241,7 +241,7 @@ const [search, setSearch] = useState("");
     <h4 className="font-inter text-[14px] font-medium text-black">Total sales</h4>
     <button className="text-[#999] hover:text-black">⋯</button>
   </div>
-  <div className="h-[100px] flex items-center justify-center text-[#E5E5E5]">
+  <div className="h-25 flex items-center justify-center text-[#E5E5E5]">
     No data
   </div>
 </div>

@@ -311,16 +311,16 @@ export default function LandingPage() {
               Today's flash deals
             </h2>
             <div className="flex gap-2 overflow-x-auto">
-              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-[50px] lg:min-w-[60px] lg:px-4">
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
                 <span className="text-xl lg:text-2xl font-bold text-gray-900">00</span>
               </div>
-              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-[50px] lg:min-w-[60px] lg:px-4">
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
                 <span className="text-xl lg:text-2xl font-bold text-gray-900">{String(countdown.hours).padStart(2, '0')}</span>
               </div>
-              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-[50px] lg:min-w-[60px] lg:px-4">
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
                 <span className="text-xl lg:text-2xl font-bold text-gray-900">{String(countdown.minutes).padStart(2, '0')}</span>
               </div>
-              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-[50px] lg:min-w-[60px] lg:px-4">
+              <div className="bg-white rounded-lg px-3 py-2 text-center min-w-12.5 lg:min-w-15 lg:px-4">
                 <span className="text-xl lg:text-2xl font-bold text-gray-900">{String(countdown.seconds).padStart(2, '0')}</span>
               </div>
             </div>
@@ -641,7 +641,7 @@ export default function LandingPage() {
                           alt={product.title}
                           width={200}
                           height={200}
-                          className="object-contain max-h-[180px]"
+                          className="object-contain max-h-45"
                         />
                       </div>
                     </div>
@@ -657,7 +657,7 @@ export default function LandingPage() {
                           </svg>
                         </span>
                       </div>
-                      <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 min-h-[48px]">
+                      <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 min-h-12">
                         {product.title}
                       </h3>
                       <div className="flex items-center gap-1 mb-4">

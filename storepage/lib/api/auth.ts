@@ -290,7 +290,7 @@ export async function uploadProfileImage(file: File): Promise<string> {
   const content = await fileToContent(file);
   
   // Use the store uploads endpoint (mirrors admin uploads)
-  const response = await apiClient.post('/store/uploads', {
+  const response = await apiClient.post<{ files: { url: string }[] }>('/store/uploads', {
     files: [{
       name: file.name,
       content: content,
