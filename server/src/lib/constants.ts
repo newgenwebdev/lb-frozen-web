@@ -26,11 +26,19 @@ export const EMAIL_LOGO_URL = process.env.EMAIL_LOGO_URL
 
 /**
  * Database URL for Postgres instance used by the backend
+ * Note: Don't assert at module load time to allow build without env vars
  */
-export const DATABASE_URL = assertValue(
-  process.env.DATABASE_URL,
-  'Environment variable for DATABASE_URL is not set',
-)
+export const DATABASE_URL = process.env.DATABASE_URL || ''
+
+/**
+ * Get DATABASE_URL with assertion (use at runtime, not build time)
+ */
+export function getDatabaseUrl(): string {
+  return assertValue(
+    process.env.DATABASE_URL,
+    'Environment variable for DATABASE_URL is not set',
+  )
+}
 
 /**
  * (optional) Redis URL for Redis instance used by the backend

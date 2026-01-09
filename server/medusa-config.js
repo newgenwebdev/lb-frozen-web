@@ -4,7 +4,6 @@ import {
   AUTH_CORS,
   BACKEND_URL,
   COOKIE_SECRET,
-  DATABASE_URL,
   JWT_SECRET,
   REDIS_URL,
   RESEND_API_KEY,
@@ -25,6 +24,9 @@ import {
 } from './src/lib/constants';
 
 loadEnv(process.env.NODE_ENV, process.cwd());
+
+// Get DATABASE_URL directly from env to allow build without it
+const DATABASE_URL = process.env.DATABASE_URL || '';
 
 const medusaConfig = {
   projectConfig: {
