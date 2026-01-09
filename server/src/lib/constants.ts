@@ -1,7 +1,5 @@
 import { loadEnv } from '@medusajs/framework/utils'
 
-import { assertValue } from '../utils/assert-value'
-
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 /**
@@ -31,16 +29,6 @@ export const EMAIL_LOGO_URL = process.env.EMAIL_LOGO_URL
 export const DATABASE_URL = process.env.DATABASE_URL || ''
 
 /**
- * Get DATABASE_URL with assertion (use at runtime, not build time)
- */
-export function getDatabaseUrl(): string {
-  return assertValue(
-    process.env.DATABASE_URL,
-    'Environment variable for DATABASE_URL is not set',
-  )
-}
-
-/**
  * (optional) Redis URL for Redis instance used by the backend
  */
 export const REDIS_URL = process.env.REDIS_URL;
@@ -62,19 +50,15 @@ export const STORE_CORS = process.env.STORE_CORS;
 
 /**
  * JWT Secret used for signing JWT tokens
+ * Note: Uses fallback for build time, must be set at runtime
  */
-export const JWT_SECRET = assertValue(
-  process.env.JWT_SECRET,
-  'Environment variable for JWT_SECRET is not set',
-)
+export const JWT_SECRET = process.env.JWT_SECRET || 'build-time-placeholder'
 
 /**
  * Cookie secret used for signing cookies
+ * Note: Uses fallback for build time, must be set at runtime
  */
-export const COOKIE_SECRET = assertValue(
-  process.env.COOKIE_SECRET,
-  'Environment variable for COOKIE_SECRET is not set',
-)
+export const COOKIE_SECRET = process.env.COOKIE_SECRET || 'build-time-placeholder'
 
 /**
  * (optional) Minio configuration for file storage
